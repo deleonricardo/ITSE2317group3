@@ -32,6 +32,7 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnUser = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
+			this.btnAdmin = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// lblTitle
@@ -72,11 +73,21 @@
 			this.button1.Text = "&Employee";
 			this.button1.UseVisualStyleBackColor = true;
 			// 
+			// btnAdmin
+			// 
+			this.btnAdmin.Location = new System.Drawing.Point(451, 207);
+			this.btnAdmin.Name = "btnAdmin";
+			this.btnAdmin.Size = new System.Drawing.Size(104, 39);
+			this.btnAdmin.TabIndex = 4;
+			this.btnAdmin.Text = "&Admin";
+			this.btnAdmin.UseVisualStyleBackColor = true;
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(794, 448);
+			this.ClientSize = new System.Drawing.Size(794, 306);
+			this.Controls.Add(this.btnAdmin);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.btnUser);
 			this.Controls.Add(this.label1);
@@ -94,6 +105,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button btnUser;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnAdmin;
 	}
 }
 

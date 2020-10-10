@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmEmployeeAdminLogin.cs">
+    <Compile Include="frmCouponForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEmployeeAdminLogin.Designer.cs">
-      <DependentUpon>frmEmployeeAdminLogin.cs</DependentUpon>
+    <Compile Include="frmCouponForm.Designer.cs">
+      <DependentUpon>frmCouponForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployeeInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployeeInterface.Designer.cs">
+      <DependentUpon>frmEmployeeInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployeeLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployeeLogin.Designer.cs">
+      <DependentUpon>frmEmployeeLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInventory.cs">
       <SubType>Form</SubType>
@@ -66,6 +78,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmUserInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserInterface.Designer.cs">
+      <DependentUpon>frmUserInterface.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmCouponForm.resx">
+      <DependentUpon>frmCouponForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeeLogin.resx">
+      <DependentUpon>frmEmployeeLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventory.resx">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,6 +105,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmUserInterface.resx">
+      <DependentUpon>frmUserInterface.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

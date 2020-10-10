@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SelfCheckoutGroupProject
 {
-	public partial class frmEmployeeAdminLogin : Form
+	public partial class frmEmployeeInterface : Form
 	{
-		public frmEmployeeAdminLogin()
+		public frmEmployeeInterface()
 		{
 			InitializeComponent();
 		}
