@@ -35,7 +35,13 @@
 			this.btnDeleteItem = new System.Windows.Forms.Button();
 			this.btnEnterCoupon = new System.Windows.Forms.Button();
 			this.btnCloseStation = new System.Windows.Forms.Button();
+			this.InventoryMS = new System.Windows.Forms.MenuStrip();
+			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.InventoryDataGrid)).BeginInit();
+			this.InventoryMS.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// InventoryDataGrid
@@ -100,6 +106,49 @@
 			this.btnCloseStation.Text = "Close Station";
 			this.btnCloseStation.UseVisualStyleBackColor = true;
 			// 
+			// InventoryMS
+			// 
+			this.InventoryMS.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+			this.InventoryMS.ImageScalingSize = new System.Drawing.Size(24, 24);
+			this.InventoryMS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+			this.InventoryMS.Location = new System.Drawing.Point(0, 0);
+			this.InventoryMS.Name = "InventoryMS";
+			this.InventoryMS.Size = new System.Drawing.Size(800, 33);
+			this.InventoryMS.TabIndex = 7;
+			this.InventoryMS.Text = "InventoryMS";
+			// 
+			// fileToolStripMenuItem
+			// 
+			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customizeToolStripMenuItem});
+			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+			this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+			this.fileToolStripMenuItem.Text = "&File";
+			// 
+			// customizeToolStripMenuItem
+			// 
+			this.customizeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fontToolStripMenuItem,
+            this.colorToolStripMenuItem});
+			this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
+			this.customizeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+			this.customizeToolStripMenuItem.Text = "Customize";
+			// 
+			// fontToolStripMenuItem
+			// 
+			this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
+			this.fontToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+			this.fontToolStripMenuItem.Text = "Font";
+			this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
+			// 
+			// colorToolStripMenuItem
+			// 
+			this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+			this.colorToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+			this.colorToolStripMenuItem.Text = "Color";
+			this.colorToolStripMenuItem.Click += new System.EventHandler(this.colorToolStripMenuItem_Click);
+			// 
 			// frmInventory
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -112,9 +161,13 @@
 			this.Controls.Add(this.btnSearch);
 			this.Controls.Add(this.txtSearchBar);
 			this.Controls.Add(this.InventoryDataGrid);
+			this.Controls.Add(this.InventoryMS);
+			this.MainMenuStrip = this.InventoryMS;
 			this.Name = "frmInventory";
 			this.Text = "Inventory";
 			((System.ComponentModel.ISupportInitialize)(this.InventoryDataGrid)).EndInit();
+			this.InventoryMS.ResumeLayout(false);
+			this.InventoryMS.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -129,5 +182,10 @@
 		private System.Windows.Forms.Button btnDeleteItem;
 		private System.Windows.Forms.Button btnEnterCoupon;
 		private System.Windows.Forms.Button btnCloseStation;
+		private System.Windows.Forms.MenuStrip InventoryMS;
+		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem fontToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
 	}
 }
