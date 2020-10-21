@@ -1,0 +1,14 @@
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\bin\Debug\SelfCheckoutGroupProject.exe.config
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\bin\Debug\SelfCheckoutGroupProject.exe
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\bin\Debug\SelfCheckoutGroupProject.pdb
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.csprojAssemblyReference.cache
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.frmCouponForm.resources
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.frmEmployeeLogin.resources
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.frmInventory.resources
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.frmMain.resources
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.Properties.Resources.resources
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.frmUserInterface.resources
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.csproj.GenerateResource.cache
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.csproj.CoreCompileInputs.cache
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.exe
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.pdb
