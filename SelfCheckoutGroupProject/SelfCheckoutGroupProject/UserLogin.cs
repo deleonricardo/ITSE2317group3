@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SelfCheckoutGroupProject
 {
-	public partial class frmCouponForm : Form
-	{
-		public frmCouponForm()
-		{
-			InitializeComponent();
-		}
-
-        private void frmEmployeeAdminLogin_Load(object sender, EventArgs e)
+    public partial class UserLogin : Form
+    {
+        public UserLogin()
         {
-
+            InitializeComponent();
         }
     }
 }
