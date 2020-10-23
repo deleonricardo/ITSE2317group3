@@ -12,9 +12,20 @@ namespace SelfCheckoutGroupProject
 {
     public partial class managerLogin : Form
     {
+        string sMLName;
+        string sMLID;
+        string sMLPass;
+
         public managerLogin()
         {
             InitializeComponent();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            sMLName = txtMName.Text;
+            sMLID = txtMID.Text;
+            sMLPass = txtPassword.Text;
         }
     }
 }
