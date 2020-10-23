@@ -48,17 +48,41 @@ namespace SelfCheckoutGroupProject
 
 		private void btnUser_Click(object sender, EventArgs e)
 		{
-			//Take the user to the user interface form
-			frmUserInterface userScreen = new frmUserInterface();
-			this.Hide();
+			//Take the user to the user interface form - Andres
+            //Should be logged in to user by employee or manager for use by "customer"? -RDL
+			UserInterface userScreen = new UserInterface();
 			userScreen.Show();
 		}
 
 		private void btnEmployee_Click(object sender, EventArgs e)
 		{
-			frmEmployeeLogin empLoginScreen = new frmEmployeeLogin();
-			this.Hide();
+            //open employee login screen - RDL
+			EmployeeLogin empLoginScreen = new EmployeeLogin();
 			empLoginScreen.Show();
 		}
-	}
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            //open manager login screen - RDL
+            managerLogin mngmtLoginScreen = new managerLogin();
+            mngmtLoginScreen.Show();
+        }
+
+
+        //need to create a class for items -RDL
+        //need to create a class for employees - names, ID, Passwords - RDL
+        //How are passwords safe if stored (security issues) -RDL
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 }

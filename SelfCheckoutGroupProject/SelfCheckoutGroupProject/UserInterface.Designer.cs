@@ -36,6 +36,12 @@
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.lblTaxes = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.txtSKU = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -47,6 +53,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add Item";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -115,11 +122,72 @@
             this.lblTotal.Size = new System.Drawing.Size(100, 23);
             this.lblTotal.TabIndex = 7;
             // 
+            // lblName
+            // 
+            this.lblName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(196, 111);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(100, 23);
+            this.lblName.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(54, 105);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(136, 29);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Item Name:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(63, 134);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(127, 29);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Item Price:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(51, 76);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(139, 29);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Item SKU #:";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(196, 140);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(100, 23);
+            this.lblPrice.TabIndex = 12;
+            // 
+            // txtSKU
+            // 
+            this.txtSKU.Location = new System.Drawing.Point(196, 83);
+            this.txtSKU.Name = "txtSKU";
+            this.txtSKU.Size = new System.Drawing.Size(100, 22);
+            this.txtSKU.TabIndex = 13;
+            // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtSKU);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblTaxes);
             this.Controls.Add(this.lblSubTotal);
@@ -145,5 +213,11 @@
         private System.Windows.Forms.Label lblSubTotal;
         private System.Windows.Forms.Label lblTaxes;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.TextBox txtSKU;
     }
 }
