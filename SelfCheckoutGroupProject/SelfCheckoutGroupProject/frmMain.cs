@@ -12,7 +12,11 @@ namespace SelfCheckoutGroupProject
 {
 	public partial class frmMain : Form
 	{
-		public frmMain()
+        public static Manager nManager = new Manager();
+        public static Employee nEmployee = new Employee();
+        public static List<Product> cart = new List<Product>(); //create product cart list
+
+        public frmMain()
 		{
 			InitializeComponent();
 		}
@@ -50,7 +54,7 @@ namespace SelfCheckoutGroupProject
 		{
 			//Take the user to the user interface form - Andres
             //Should be logged in to user by employee or manager for use by "customer"? -RDL
-			UserInterface userScreen = new UserInterface();
+			UserLogin userScreen = new UserLogin();
 			userScreen.Show();
 		}
 
@@ -73,16 +77,34 @@ namespace SelfCheckoutGroupProject
         //need to create a class for employees - names, ID, Passwords - RDL
         //How are passwords safe if stored (security issues) -RDL
 
+     
+
     }
+          
 
+}
 
+public class Employee
+{
+    //customer class with variables get-set
+    public string sEName { get; set; }
+   public string sEIDNum { get; set; }
+    //should passwords be here - rdl
+    public string sEPass { get; set; }
+  }
+public class Manager
+{
+    //customer class with variables get-set
+    public string sMName { get; set; }
+    public string sMIDNum { get; set; }
+    //should passwords be here - rdl
+    public string sMPass { get; set; }
+       }
 
-
-
-
-
-
-
-
-
+public class Product
+{
+public string sName { get; set; }
+    public double dPrice { get; set; }
+    public string sSKUNum { get; set; }
+    public int iCount { get; set; }
 }
