@@ -14,6 +14,7 @@ namespace SelfCheckoutGroupProject
 	{
         public static Manager nManager = new Manager();
         public static Employee nEmployee = new Employee();
+        public static Product pProduct = new Product();
         public static List<Product> cart = new List<Product>(); //create product cart list
 
         public frmMain()
@@ -73,8 +74,7 @@ namespace SelfCheckoutGroupProject
         }
 
 
-        //need to create a class for items -RDL
-        //need to create a class for employees - names, ID, Passwords - RDL
+       
         //How are passwords safe if stored (security issues) -RDL
 
      

@@ -42,6 +42,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.txtSKU = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -177,11 +178,23 @@
             this.txtSKU.Size = new System.Drawing.Size(100, 22);
             this.txtSKU.TabIndex = 13;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(106, 360);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(136, 59);
+            this.btnSearch.TabIndex = 14;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSKU);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.label7);
@@ -219,5 +232,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.TextBox txtSKU;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
