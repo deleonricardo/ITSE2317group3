@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SelfCheckoutGroupProject
 {
@@ -73,13 +74,22 @@ namespace SelfCheckoutGroupProject
             mngmtLoginScreen.Show();
         }
 
+		private void frmMain_Load(object sender, EventArgs e)
+		{
+			//When the form loads, connect to the MySQL Database called projectDB - Andres
+			string connectionString = null;
+			SqlConnection dbConnection;
 
-       
-        //How are passwords safe if stored (security issues) -RDL
+			connectionString = "Data Source= cstnt.tstc.edu; Inital Catalog = projectdb"
+		}
 
-     
 
-    }
+
+		//How are passwords safe if stored (security issues) -RDL
+
+
+
+	}
           
 
 }
