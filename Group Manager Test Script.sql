@@ -1,0 +1,1 @@
+SELECT * FROM group3.`manager table`;
