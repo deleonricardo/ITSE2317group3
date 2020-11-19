@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 
 namespace SelfCheckoutGroupProject
@@ -76,11 +78,25 @@ namespace SelfCheckoutGroupProject
 
 		private void frmMain_Load(object sender, EventArgs e)
 		{
-			//When the form loads, connect to the MySQL Database called projectDB - Andres
-			string connectionString = null;
-			SqlConnection dbConnection;
+			//When the form loads, connect to the MySQL Database called group3. 
+			//The console.writeline() commands are only there for testing purposes. 
+			//I assume we will be referencing the database when coding the login and reset password functions - Andres
+			string connectionString = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
+			SqlConnection dbConnection = new SqlConnection(connectionString);
 
-			connectionString = "Data Source= cstnt.tstc.edu; Inital Catalog = projectdb"
+			try
+			{
+				Console.WriteLine("Connecting to MySQL database");
+				dbConnection.Open();
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.ToString());
+			
+			}
+			dbConnection.Close();
+			Console.WriteLine("Done");
+			
 		}
 
 
