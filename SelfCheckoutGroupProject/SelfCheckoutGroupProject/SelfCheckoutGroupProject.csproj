@@ -54,6 +54,12 @@
     <Compile Include="EmployeeLogin.Designer.cs">
       <DependentUpon>EmployeeLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUserCheckout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUserCheckout.Designer.cs">
+      <DependentUpon>frmUserCheckout.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <EmbeddedResource Include="EmployeeLogin.resx">
       <DependentUpon>EmployeeLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUserCheckout.resx">
+      <DependentUpon>frmUserCheckout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInventory.resx">
       <DependentUpon>frmInventory.cs</DependentUpon>
