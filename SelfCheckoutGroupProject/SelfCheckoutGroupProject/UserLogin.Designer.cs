@@ -63,7 +63,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(80, 163);
+            this.label1.Location = new System.Drawing.Point(70, 160);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 32);
             this.label1.TabIndex = 2;
@@ -82,7 +82,7 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(244, 158);
+            this.txtID.Location = new System.Drawing.Point(233, 157);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(151, 38);
             this.txtID.TabIndex = 4;
