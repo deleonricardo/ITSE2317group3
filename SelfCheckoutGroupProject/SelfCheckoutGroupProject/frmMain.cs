@@ -79,24 +79,30 @@ namespace SelfCheckoutGroupProject
 		private void frmMain_Load(object sender, EventArgs e)
 		{
 			//When the form loads, connect to the MySQL Database called group3. 
-			//The console.writeline() commands are only there for testing purposes. 
+			frmInventory inventoryTest = new frmInventory();
+			inventoryTest.Show();
+			
 			//I assume we will be referencing the database when coding the login and reset password functions - Andres
-			string connectionString = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
-			SqlConnection dbConnection = new SqlConnection(connectionString);
 
-			try
-			{
-				Console.WriteLine("Connecting to MySQL database");
-				dbConnection.Open();
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex.ToString());
+
+			//Program executed without errors. Will move the code to the inventory form to
+			//use with the datagrid - Andres
+
+			//string connection = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
+			//MySqlConnection sqlConn = new MySqlConnection(connection);
+			//MySqlDataAdapter dataApdapter = new MySqlDataAdapter();
+			//MySqlCommand sqlCommand;
+			//DataSet sqlDataSet = new DataSet();
+
+			//string sqlStatement = "SELECT * FROM group3.employees";
+			//sqlCommand = new MySqlCommand(sqlStatement, sqlConn);
+			//sqlCommand.Connection = sqlConn;
+
+			//dataApdapter.SelectCommand = sqlCommand;
+
 			
-			}
-			dbConnection.Close();
-			Console.WriteLine("Done");
-			
+
+
 		}
 
 
