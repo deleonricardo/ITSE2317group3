@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MySql.Data;
+using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
+
 namespace SelfCheckoutGroupProject
 {
     public partial class ManagerInterface : Form
