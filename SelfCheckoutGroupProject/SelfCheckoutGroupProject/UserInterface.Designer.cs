@@ -45,10 +45,10 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.txtOrderNum = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblItemTotal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -215,21 +215,21 @@
             this.label8.TabIndex = 16;
             this.label8.Text = "Quantity Ordered:";
             // 
-            // label9
+            // lblCount
             // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(230, 169);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 23);
-            this.label9.TabIndex = 17;
+            this.lblCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCount.Location = new System.Drawing.Point(230, 169);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(100, 23);
+            this.lblCount.TabIndex = 17;
             // 
-            // textBox1
+            // txtOrderNum
             // 
-            this.textBox1.Location = new System.Drawing.Point(230, 199);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 18;
+            this.txtOrderNum.Location = new System.Drawing.Point(230, 199);
+            this.txtOrderNum.Name = "txtOrderNum";
+            this.txtOrderNum.Size = new System.Drawing.Size(100, 22);
+            this.txtOrderNum.TabIndex = 18;
             // 
             // label10
             // 
@@ -241,24 +241,24 @@
             this.label10.TabIndex = 19;
             this.label10.Text = "Item Total:";
             // 
-            // label11
+            // lblItemTotal
             // 
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(229, 226);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(100, 23);
-            this.label11.TabIndex = 20;
+            this.lblItemTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblItemTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItemTotal.Location = new System.Drawing.Point(229, 226);
+            this.lblItemTotal.Name = "lblItemTotal";
+            this.lblItemTotal.Size = new System.Drawing.Size(100, 23);
+            this.lblItemTotal.TabIndex = 20;
             // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.lblItemTotal);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtOrderNum);
+            this.Controls.Add(this.lblCount);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSearch);
@@ -302,9 +302,9 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.TextBox txtOrderNum;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblItemTotal;
     }
 }
