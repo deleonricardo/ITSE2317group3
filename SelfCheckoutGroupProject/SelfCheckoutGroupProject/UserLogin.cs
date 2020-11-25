@@ -34,23 +34,34 @@ namespace SelfCheckoutGroupProject
                 //ERRORS: Can still access the User Interface Form by putting in random / Incorrect login info
                 //Maybe move the IF Statement made by RDL to help test for valid information? - Andres.
 
+                //UPDATE [9/24/2020] - Error has been resolved. Only valid data is allowed. 
+                //Will add the other columns. users table only had ID and Password for testing purposes - AC
+
                 string userTest = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
                 MySqlConnection Conn  = new MySqlConnection(userTest);
 
                 string selectStatement = "SELECT * FROM group3.users WHERE userID = '" + txtID.Text.Trim() + "'and userPassword = '" + txtPassword.Text.Trim()+"'";
                 MySqlCommand selectComm = new MySqlCommand(selectStatement, Conn);
                 MySqlDataAdapter userDA = new MySqlDataAdapter(selectStatement, Conn);
-                DataSet userTable = new DataSet();
+                DataTable userTable = new DataTable();
                 
-                userDA.Fill(userTable, "users");
+                userDA.Fill(userTable);
 
-                if (userTable.Tables.Count == 1)
+                if (userTable.Rows.Count == 1)
                 {
                     MessageBox.Show("Login Successful!");
-                UserInterface InterfaceScreen = new UserInterface();
-                InterfaceScreen.Show();
-                this.Hide();
-                
+                    UserInterface InterfaceScreen = new UserInterface();
+                    InterfaceScreen.Show();
+                    this.Hide();
+
+                }
+
+                else
+                //error message and clear text boxes to try again
+                {
+                    MessageBox.Show("Error, Incorrect Entry");
+                    txtID.Text = "";
+                    txtPassword.Text = "";
                 }
 
 
@@ -58,21 +69,21 @@ namespace SelfCheckoutGroupProject
 
 
 
-				if ((txtID.Text != frmMain.nManager.sMIDNum && txtPassword.Text != frmMain.nManager.sMPass) || (txtID.Text != frmMain.nEmployee.sEIDNum && txtPassword.Text != frmMain.nEmployee.sEPass))
-				{
-					//error message and clear text boxes to try again
-					MessageBox.Show("Error, Incorrect Entry");
-					txtID.Text = "";
-					txtPassword.Text = "";
-				}
-				else
-				{
+    //            if ((txtID.Text != frmMain.nManager.sMIDNum && txtPassword.Text != frmMain.nManager.sMPass) || (txtID.Text != frmMain.nEmployee.sEIDNum && txtPassword.Text != frmMain.nEmployee.sEPass))
+				//{
+				//	//error message and clear text boxes to try again
+				//	MessageBox.Show("Error, Incorrect Entry");
+				//	txtID.Text = "";
+				//	txtPassword.Text = "";
+				//}
+				//else
+				//{
 
-					//open user input screen - RDL
-					UserInterface InterfaceScreen = new UserInterface();
-					InterfaceScreen.Show();
-					this.Hide();
-				}
+				//	//open user input screen - RDL
+				//	UserInterface InterfaceScreen = new UserInterface();
+				//	InterfaceScreen.Show();
+				//	this.Hide();
+				//}
 
 			}
             catch(Exception c)
@@ -88,6 +99,9 @@ namespace SelfCheckoutGroupProject
         {
             txtID.Text = "";
             txtPassword.Text = "";
+            //Added the code to take the user back frmMain - AC
+            frmMain mainScreen = new frmMain();
+            mainScreen.Show();
             this.Hide();
         }
     }
