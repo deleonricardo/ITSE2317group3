@@ -31,3 +31,4 @@ C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfChec
 C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.UserInterface.resources
 C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.UserLogin.resources
 C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.csproj.CopyComplete
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.UpdatePassword.resources

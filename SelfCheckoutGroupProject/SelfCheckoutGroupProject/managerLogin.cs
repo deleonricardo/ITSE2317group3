@@ -73,7 +73,7 @@ namespace SelfCheckoutGroupProject
                 if (manTable.Rows.Count == 1)
                 {
                     MessageBox.Show("Login Successful! \n Welcome " + txtMName.Text);
-                    UserInterface InterfaceScreen = new UserInterface();
+                    ManagerInterface InterfaceScreen = new ManagerInterface();
                     InterfaceScreen.Show();
                     this.Hide();
 

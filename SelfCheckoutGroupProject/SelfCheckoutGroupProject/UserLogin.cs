@@ -34,20 +34,42 @@ namespace SelfCheckoutGroupProject
                 //ERRORS: Can still access the User Interface Form by putting in random / Incorrect login info
                 //Maybe move the IF Statement made by RDL to help test for valid information? - Andres.
 
-                //UPDATE [9/24/2020] - Error has been resolved. Only valid data is allowed. 
+                //UPDATE [11/24/2020] - Error has been resolved. Only valid data is allowed. 
                 //Will add the other columns. users table only had ID and Password for testing purposes - AC
 
+
+                //UPDATE [11/26/2020] - Conditions are currently changing for the User Login Form. 
+                                        //The users table has been dropped from the group3 MySql database
+                                        //The Condition now tests to see if Manager and/or employee credentials are entered, 
+                                        //if so, the user is denied access to the userInterface, otherwise casual users continue on
+
+                                        //Currently testing employee logins only. Test is a success, works as intended. 
+                                        //A second SELECT statement may have to be used to test for manager logins 
+                                        //as a JOIN between employees and managers seems ineffective for testing the user login - AC 
+
+                //UPDATE TEST RESULTS - Condition has been changed to resolve a previous login issue, 
+                //condition now uses an AND statement to test for both Employee and Manager login 
                 string userTest = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
                 MySqlConnection Conn  = new MySqlConnection(userTest);
 
-                string selectStatement = "SELECT * FROM group3.users WHERE userID = '" + txtID.Text.Trim() + "'and userPassword = '" + txtPassword.Text.Trim()+"'";
+                string selectStatement = "SELECT * FROM group3.employees WHERE EmployeeID = '" + txtID.Text.Trim() + "'and Password = '" + txtPassword.Text.Trim()+"'";
                 MySqlCommand selectComm = new MySqlCommand(selectStatement, Conn);
                 MySqlDataAdapter userDA = new MySqlDataAdapter(selectStatement, Conn);
                 DataTable userTable = new DataTable();
-                
+
                 userDA.Fill(userTable);
 
-                if (userTable.Rows.Count == 1)
+                string managerSelect = "SELECT * FROM group3.managertable WHERE ManagerID = '" + txtID.Text.Trim() + "'and Password = '" + txtPassword.Text.Trim() + "'";
+                MySqlCommand ManagerselectComm = new MySqlCommand(managerSelect, Conn);
+                MySqlDataAdapter ManagerDA = new MySqlDataAdapter(managerSelect, Conn);
+                DataTable manTable = new DataTable();
+
+                ManagerDA.Fill(manTable);
+
+                
+
+
+                if (userTable.Rows.Count != 1 && manTable.Rows.Count !=1)
                 {
                     MessageBox.Show("Login Successful!");
                     UserInterface InterfaceScreen = new UserInterface();
@@ -59,33 +81,53 @@ namespace SelfCheckoutGroupProject
                 else
                 //error message and clear text boxes to try again
                 {
-                    MessageBox.Show("Error, Incorrect Entry");
+                    MessageBox.Show("Error! Incorrect Entry \n Detected as Employee Or Manager. \n Unauthorized Access to User Interface");
                     txtID.Text = "";
                     txtPassword.Text = "";
                 }
 
 
+               
+
+                //if (manTable.Rows.Count != 1)
+                //{
+                //    MessageBox.Show("Login Successful!");
+                //    UserInterface InterfaceScreen = new UserInterface();
+                //    InterfaceScreen.Show();
+                //    this.Hide();
+
+                //}
+
+                //else
+                ////error message and clear text boxes to try again
+                //{
+                //    MessageBox.Show("Error! Incorrect Entry \n Detected as Manager. \n Unauthorized Access to User Interface");
+                //    txtID.Text = "";
+                //    txtPassword.Text = "";
+                //}
 
 
 
 
-    //            if ((txtID.Text != frmMain.nManager.sMIDNum && txtPassword.Text != frmMain.nManager.sMPass) || (txtID.Text != frmMain.nEmployee.sEIDNum && txtPassword.Text != frmMain.nEmployee.sEPass))
-				//{
-				//	//error message and clear text boxes to try again
-				//	MessageBox.Show("Error, Incorrect Entry");
-				//	txtID.Text = "";
-				//	txtPassword.Text = "";
-				//}
-				//else
-				//{
 
-				//	//open user input screen - RDL
-				//	UserInterface InterfaceScreen = new UserInterface();
-				//	InterfaceScreen.Show();
-				//	this.Hide();
-				//}
 
-			}
+                //            if ((txtID.Text != frmMain.nManager.sMIDNum && txtPassword.Text != frmMain.nManager.sMPass) || (txtID.Text != frmMain.nEmployee.sEIDNum && txtPassword.Text != frmMain.nEmployee.sEPass))
+                //{
+                //	//error message and clear text boxes to try again
+                //	MessageBox.Show("Error, Incorrect Entry");
+                //	txtID.Text = "";
+                //	txtPassword.Text = "";
+                //}
+                //else
+                //{
+
+                //	//open user input screen - RDL
+                //	UserInterface InterfaceScreen = new UserInterface();
+                //	InterfaceScreen.Show();
+                //	this.Hide();
+                //}
+
+            }
             catch(Exception c)
             {
                 MessageBox.Show(c.Message);
