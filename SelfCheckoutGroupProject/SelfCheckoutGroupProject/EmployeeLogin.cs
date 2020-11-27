@@ -19,7 +19,33 @@ namespace SelfCheckoutGroupProject
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
+            
+                try
+                {
+                
+                //check password RDL
+                if ((txtEName.Text != frmMain.nEmployee.sEName) && (frmMain.nEmployee.sEIDNum != txtEID.Text) && (txtEPass.Text != frmMain.nEmployee.sEPass))
+                    {
+                        //error message and clear text boxes to try again
+                        MessageBox.Show("Error, Incorrect Entry");
+                        txtEName.Text = "";
+                        txtEPass.Text = "";
+                    }
+                    else
+                    {
 
+                        //open user input screen - RDL
+                        UserInterface InterfaceScreen = new UserInterface();
+                        InterfaceScreen.Show();
+                        this.Hide();
+                    }
+
+                }
+                catch (Exception c)
+                {
+                    MessageBox.Show(c.Message);
+                }
+            
         }
     }
 }

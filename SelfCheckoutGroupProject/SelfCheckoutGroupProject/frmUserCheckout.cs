@@ -20,5 +20,10 @@ namespace SelfCheckoutGroupProject
         {
             InitializeComponent();
         }
+
+        private void btnCreditCard_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
