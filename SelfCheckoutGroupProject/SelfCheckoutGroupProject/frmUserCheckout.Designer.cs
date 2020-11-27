@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lstOrderSummary = new System.Windows.Forms.ListBox();
-            this.btnCreditCard = new System.Windows.Forms.RadioButton();
-            this.btnCash = new System.Windows.Forms.RadioButton();
-            this.btnCheck = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtCVRNum = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCardNum = new System.Windows.Forms.TextBox();
+            this.txtNameOnCard = new System.Windows.Forms.TextBox();
             this.lable6 = new System.Windows.Forms.Label();
             this.txtExpYear = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtExpMonth = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtNameOnCard = new System.Windows.Forms.TextBox();
-            this.txtCardNum = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.txtCVRNum = new System.Windows.Forms.TextBox();
-            this.txtBalance = new System.Windows.Forms.TextBox();
-            this.txtTax = new System.Windows.Forms.TextBox();
-            this.txtSubtotal = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnCheck = new System.Windows.Forms.RadioButton();
+            this.btnCash = new System.Windows.Forms.RadioButton();
+            this.btnCreditCard = new System.Windows.Forms.RadioButton();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSubtotal = new System.Windows.Forms.TextBox();
+            this.txtTax = new System.Windows.Forms.TextBox();
+            this.txtBalance = new System.Windows.Forms.TextBox();
             this.btnCancelPurchase = new System.Windows.Forms.Button();
             this.btnConfirmPurchase = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -69,6 +69,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Summary";
+            // 
+            // lstOrderSummary
+            // 
+            this.lstOrderSummary.FormattingEnabled = true;
+            this.lstOrderSummary.ItemHeight = 16;
+            this.lstOrderSummary.Location = new System.Drawing.Point(6, 21);
+            this.lstOrderSummary.Name = "lstOrderSummary";
+            this.lstOrderSummary.Size = new System.Drawing.Size(234, 388);
+            this.lstOrderSummary.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -89,74 +98,40 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Credit Card Information";
             // 
-            // groupBox3
+            // txtCVRNum
             // 
-            this.groupBox3.Controls.Add(this.btnCheck);
-            this.groupBox3.Controls.Add(this.btnCash);
-            this.groupBox3.Controls.Add(this.btnCreditCard);
-            this.groupBox3.Location = new System.Drawing.Point(264, 12);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(632, 74);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Payment Option";
+            this.txtCVRNum.Location = new System.Drawing.Point(111, 185);
+            this.txtCVRNum.Name = "txtCVRNum";
+            this.txtCVRNum.Size = new System.Drawing.Size(100, 22);
+            this.txtCVRNum.TabIndex = 12;
             // 
-            // groupBox4
+            // textBox4
             // 
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Controls.Add(this.txtSubtotal);
-            this.groupBox4.Controls.Add(this.txtTax);
-            this.groupBox4.Controls.Add(this.txtBalance);
-            this.groupBox4.Location = new System.Drawing.Point(591, 92);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(305, 237);
-            this.groupBox4.TabIndex = 0;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Payment Total";
+            this.textBox4.Location = new System.Drawing.Point(85, 134);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(76, 22);
+            this.textBox4.TabIndex = 11;
             // 
-            // lstOrderSummary
+            // textBox3
             // 
-            this.lstOrderSummary.FormattingEnabled = true;
-            this.lstOrderSummary.ItemHeight = 16;
-            this.lstOrderSummary.Location = new System.Drawing.Point(6, 21);
-            this.lstOrderSummary.Name = "lstOrderSummary";
-            this.lstOrderSummary.Size = new System.Drawing.Size(234, 388);
-            this.lstOrderSummary.TabIndex = 0;
+            this.textBox3.Location = new System.Drawing.Point(242, 137);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(73, 22);
+            this.textBox3.TabIndex = 10;
             // 
-            // btnCreditCard
+            // txtCardNum
             // 
-            this.btnCreditCard.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnCreditCard.Location = new System.Drawing.Point(49, 26);
-            this.btnCreditCard.Name = "btnCreditCard";
-            this.btnCreditCard.Size = new System.Drawing.Size(104, 32);
-            this.btnCreditCard.TabIndex = 0;
-            this.btnCreditCard.TabStop = true;
-            this.btnCreditCard.Text = "Credit Card";
-            this.btnCreditCard.UseVisualStyleBackColor = true;
+            this.txtCardNum.Location = new System.Drawing.Point(111, 78);
+            this.txtCardNum.Name = "txtCardNum";
+            this.txtCardNum.Size = new System.Drawing.Size(204, 22);
+            this.txtCardNum.TabIndex = 9;
             // 
-            // btnCash
+            // txtNameOnCard
             // 
-            this.btnCash.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnCash.Location = new System.Drawing.Point(226, 26);
-            this.btnCash.Name = "btnCash";
-            this.btnCash.Size = new System.Drawing.Size(104, 32);
-            this.btnCash.TabIndex = 1;
-            this.btnCash.TabStop = true;
-            this.btnCash.Text = "Cash";
-            this.btnCash.UseVisualStyleBackColor = true;
-            // 
-            // btnCheck
-            // 
-            this.btnCheck.Appearance = System.Windows.Forms.Appearance.Button;
-            this.btnCheck.Location = new System.Drawing.Point(393, 26);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(116, 32);
-            this.btnCheck.TabIndex = 2;
-            this.btnCheck.TabStop = true;
-            this.btnCheck.Text = "Check";
-            this.btnCheck.UseVisualStyleBackColor = true;
+            this.txtNameOnCard.Location = new System.Drawing.Point(120, 31);
+            this.txtNameOnCard.Name = "txtNameOnCard";
+            this.txtNameOnCard.Size = new System.Drawing.Size(195, 22);
+            this.txtNameOnCard.TabIndex = 8;
             // 
             // lable6
             // 
@@ -176,15 +151,6 @@
             this.txtExpYear.TabIndex = 4;
             this.txtExpYear.Text = "Exp Year:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Name on Card:";
-            // 
             // txtExpMonth
             // 
             this.txtExpMonth.AutoSize = true;
@@ -203,70 +169,84 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Card Number:";
             // 
-            // txtNameOnCard
+            // label3
             // 
-            this.txtNameOnCard.Location = new System.Drawing.Point(120, 31);
-            this.txtNameOnCard.Name = "txtNameOnCard";
-            this.txtNameOnCard.Size = new System.Drawing.Size(195, 22);
-            this.txtNameOnCard.TabIndex = 8;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Name on Card:";
             // 
-            // txtCardNum
+            // groupBox3
             // 
-            this.txtCardNum.Location = new System.Drawing.Point(111, 78);
-            this.txtCardNum.Name = "txtCardNum";
-            this.txtCardNum.Size = new System.Drawing.Size(204, 22);
-            this.txtCardNum.TabIndex = 9;
+            this.groupBox3.Controls.Add(this.btnCheck);
+            this.groupBox3.Controls.Add(this.btnCash);
+            this.groupBox3.Controls.Add(this.btnCreditCard);
+            this.groupBox3.Location = new System.Drawing.Point(264, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(632, 74);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Payment Option";
             // 
-            // textBox3
+            // btnCheck
             // 
-            this.textBox3.Location = new System.Drawing.Point(242, 137);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(73, 22);
-            this.textBox3.TabIndex = 10;
+            this.btnCheck.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnCheck.Location = new System.Drawing.Point(393, 26);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(116, 32);
+            this.btnCheck.TabIndex = 2;
+            this.btnCheck.TabStop = true;
+            this.btnCheck.Text = "Check";
+            this.btnCheck.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // btnCash
             // 
-            this.textBox4.Location = new System.Drawing.Point(85, 134);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(76, 22);
-            this.textBox4.TabIndex = 11;
+            this.btnCash.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnCash.Location = new System.Drawing.Point(226, 26);
+            this.btnCash.Name = "btnCash";
+            this.btnCash.Size = new System.Drawing.Size(104, 32);
+            this.btnCash.TabIndex = 1;
+            this.btnCash.TabStop = true;
+            this.btnCash.Text = "Cash";
+            this.btnCash.UseVisualStyleBackColor = true;
             // 
-            // txtCVRNum
+            // btnCreditCard
             // 
-            this.txtCVRNum.Location = new System.Drawing.Point(111, 185);
-            this.txtCVRNum.Name = "txtCVRNum";
-            this.txtCVRNum.Size = new System.Drawing.Size(100, 22);
-            this.txtCVRNum.TabIndex = 12;
+            this.btnCreditCard.Appearance = System.Windows.Forms.Appearance.Button;
+            this.btnCreditCard.Location = new System.Drawing.Point(49, 26);
+            this.btnCreditCard.Name = "btnCreditCard";
+            this.btnCreditCard.Size = new System.Drawing.Size(104, 32);
+            this.btnCreditCard.TabIndex = 0;
+            this.btnCreditCard.TabStop = true;
+            this.btnCreditCard.Text = "Credit Card";
+            this.btnCreditCard.UseVisualStyleBackColor = true;
+            this.btnCreditCard.CheckedChanged += new System.EventHandler(this.btnCreditCard_CheckedChanged);
             // 
-            // txtBalance
+            // groupBox4
             // 
-            this.txtBalance.Location = new System.Drawing.Point(86, 183);
-            this.txtBalance.Name = "txtBalance";
-            this.txtBalance.Size = new System.Drawing.Size(147, 22);
-            this.txtBalance.TabIndex = 0;
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.txtSubtotal);
+            this.groupBox4.Controls.Add(this.txtTax);
+            this.groupBox4.Controls.Add(this.txtBalance);
+            this.groupBox4.Location = new System.Drawing.Point(591, 92);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(305, 237);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Payment Total";
             // 
-            // txtTax
+            // label4
             // 
-            this.txtTax.Location = new System.Drawing.Point(86, 114);
-            this.txtTax.Name = "txtTax";
-            this.txtTax.Size = new System.Drawing.Size(147, 22);
-            this.txtTax.TabIndex = 1;
-            // 
-            // txtSubtotal
-            // 
-            this.txtSubtotal.Location = new System.Drawing.Point(86, 48);
-            this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.Size = new System.Drawing.Size(147, 22);
-            this.txtSubtotal.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Subtotal:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 188);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Balance:";
             // 
             // label2
             // 
@@ -277,14 +257,35 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Tax:";
             // 
-            // label4
+            // label1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 188);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 17);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Balance:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Subtotal:";
+            // 
+            // txtSubtotal
+            // 
+            this.txtSubtotal.Location = new System.Drawing.Point(86, 48);
+            this.txtSubtotal.Name = "txtSubtotal";
+            this.txtSubtotal.Size = new System.Drawing.Size(147, 22);
+            this.txtSubtotal.TabIndex = 2;
+            // 
+            // txtTax
+            // 
+            this.txtTax.Location = new System.Drawing.Point(86, 114);
+            this.txtTax.Name = "txtTax";
+            this.txtTax.Size = new System.Drawing.Size(147, 22);
+            this.txtTax.TabIndex = 1;
+            // 
+            // txtBalance
+            // 
+            this.txtBalance.Location = new System.Drawing.Point(86, 183);
+            this.txtBalance.Name = "txtBalance";
+            this.txtBalance.Size = new System.Drawing.Size(147, 22);
+            this.txtBalance.TabIndex = 0;
             // 
             // btnCancelPurchase
             // 
@@ -308,7 +309,7 @@
             this.btnConfirmPurchase.Text = "Confirm Purchase";
             this.btnConfirmPurchase.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // frmUserCheckout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -319,7 +320,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "frmUserCheckout";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

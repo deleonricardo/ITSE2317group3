@@ -31,12 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtEName = new System.Windows.Forms.TextBox();
+            this.txtEID = new System.Windows.Forms.TextBox();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEPass = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -69,21 +69,21 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Employee ID:";
             // 
-            // txtName
+            // txtEName
             // 
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(219, 126);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(291, 34);
-            this.txtName.TabIndex = 3;
+            this.txtEName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEName.Location = new System.Drawing.Point(219, 126);
+            this.txtEName.Name = "txtEName";
+            this.txtEName.Size = new System.Drawing.Size(291, 34);
+            this.txtEName.TabIndex = 3;
             // 
-            // txtID
+            // txtEID
             // 
-            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(219, 190);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(193, 34);
-            this.txtID.TabIndex = 4;
+            this.txtEID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEID.Location = new System.Drawing.Point(219, 190);
+            this.txtEID.Name = "txtEID";
+            this.txtEID.Size = new System.Drawing.Size(193, 34);
+            this.txtEID.TabIndex = 4;
             // 
             // btnSignIn
             // 
@@ -116,25 +116,26 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Password:";
             // 
-            // textBox1
+            // txtEPass
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(219, 244);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 34);
-            this.textBox1.TabIndex = 8;
+            this.txtEPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEPass.Location = new System.Drawing.Point(219, 244);
+            this.txtEPass.Name = "txtEPass";
+            this.txtEPass.Size = new System.Drawing.Size(193, 34);
+            this.txtEPass.TabIndex = 8;
+            this.txtEPass.TextChanged += new System.EventHandler(this.btnSignIn_Click);
             // 
             // EmployeeLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEPass);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSignIn);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtEID);
+            this.Controls.Add(this.txtEName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -150,11 +151,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtEName;
+        private System.Windows.Forms.TextBox txtEID;
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEPass;
     }
 }
