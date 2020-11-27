@@ -60,6 +60,7 @@ namespace SelfCheckoutGroupProject
             //Should be logged in to user by employee or manager for use by "customer"? -RDL
 			UserLogin userScreen = new UserLogin();
 			userScreen.Show();
+			this.Hide();
 		}
 
 		private void btnEmployee_Click(object sender, EventArgs e)
@@ -67,6 +68,7 @@ namespace SelfCheckoutGroupProject
             //open employee login screen - RDL
 			EmployeeLogin empLoginScreen = new EmployeeLogin();
 			empLoginScreen.Show();
+			this.Hide();
 		}
 
         private void btnAdmin_Click(object sender, EventArgs e)
@@ -74,13 +76,14 @@ namespace SelfCheckoutGroupProject
             //open manager login screen - RDL
             managerLogin mngmtLoginScreen = new managerLogin();
             mngmtLoginScreen.Show();
+			this.Hide();
         }
 
 		private void frmMain_Load(object sender, EventArgs e)
 		{
 			//When the form loads, connect to the MySQL Database called group3. 
-			frmInventory inventoryTest = new frmInventory();
-			inventoryTest.Show();
+			//frmInventory inventoryTest = new frmInventory();
+			//inventoryTest.Show();
 			
 			//I assume we will be referencing the database when coding the login and reset password functions - Andres
 

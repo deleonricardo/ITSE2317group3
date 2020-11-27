@@ -43,6 +43,13 @@ namespace SelfCheckoutGroupProject
             {
                 //need a manager security login form -rdl
                 //update password for specific employee in same form -rdl
+
+                //Open the UpdatePassword Interface - AC
+                UpdatePassword resetPWInterface = new UpdatePassword();
+                resetPWInterface.Show();
+                this.Hide();
+
+
             }
 
 
