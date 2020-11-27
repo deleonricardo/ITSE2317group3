@@ -38,46 +38,54 @@ namespace SelfCheckoutGroupProject
                 string userTest = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
                 MySqlConnection Conn  = new MySqlConnection(userTest);
 
-                string selectStatement = "SELECT * FROM group3.users WHERE userID = '" + txtID.Text.Trim() + "'and userPassword = '" + txtPassword.Text.Trim()+"'";
+                string selectStatement = "SELECT * FROM group3.employees WHERE EmployeeID = '" + txtID.Text.Trim() + "'and Password = '" + txtPassword.Text.Trim()+"'";
                 MySqlCommand selectComm = new MySqlCommand(selectStatement, Conn);
                 MySqlDataAdapter userDA = new MySqlDataAdapter(selectStatement, Conn);
-                DataSet userTable = new DataSet();
+                DataTable userTable = new DataTable();
                 
-                userDA.Fill(userTable, "users");
+                userDA.Fill(userTable);
 
 
                 //THIS CODE HERE IS POPULATING THE TABLE AND OPENING UP THE INTERFACE IT DOES NOT ALLOW FOR THE PASSWORD ID CHECK
-                //if (userTable.Tables.Count == 1)
-                //{
-                //    MessageBox.Show("Login Successful!");
-                //UserInterface InterfaceScreen = new UserInterface();
-                //InterfaceScreen.Show();
-                //this.Hide();
+                if (userTable.Rows.Count != 1)
+                {
+                    MessageBox.Show("Login Successful!");
+                UserInterface InterfaceScreen = new UserInterface();
+                InterfaceScreen.Show();
+                this.Hide();
                 
-                //}
+                }
 
 
 
 
 
 
-				if ((txtID.Text != frmMain.nManager.sMIDNum && txtPassword.Text != frmMain.nManager.sMPass) || (txtID.Text != frmMain.nEmployee.sEIDNum && txtPassword.Text != frmMain.nEmployee.sEPass))
-				{
+
+
+
+				//if ((txtID.Text != frmMain.nManager.sMIDNum && txtPassword.Text != frmMain.nManager.sMPass) || (txtID.Text != frmMain.nEmployee.sEIDNum && txtPassword.Text != frmMain.nEmployee.sEPass))
+				//{
 					//error message and clear text boxes to try again
-					MessageBox.Show("Error, Incorrect Entry");
-					txtID.Text = "";
-					txtPassword.Text = "";
-				}
+					//MessageBox.Show("Error, Incorrect Entry");
+					//txtID.Text = "";
+					//txtPassword.Text = "";
+				//}
 				else
 				{
 
-					//open user input screen - RDL
-					UserInterface InterfaceScreen = new UserInterface();
-					InterfaceScreen.Show();
-					this.Hide();
-				}
+                    //error message and clear text boxes to try again
+                    MessageBox.Show("Error, Incorrect Entry");
+                    txtID.Text = "";
+                    txtPassword.Text = "";
 
-			}
+                    ////open user input screen - RDL
+                    //UserInterface InterfaceScreen = new UserInterface();
+                    //InterfaceScreen.Show();
+                    //this.Hide();
+                }
+
+            }
             catch(Exception c)
             {
                 MessageBox.Show(c.Message);
@@ -91,6 +99,8 @@ namespace SelfCheckoutGroupProject
         {
             txtID.Text = "";
             txtPassword.Text = "";
+            frmMain MainScreen = new frmMain();
+            MainScreen.Show();
             this.Hide();
         }
     }
