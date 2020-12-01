@@ -73,26 +73,36 @@ namespace SelfCheckoutGroupProject
 
             try  //try catch and populate labels RDL
             {
+                //This is a test to see if a product image will be displayed based on if the user enters the correct SKU
+                //Currently, only the first item is displayed (Aloe Organic). An error message is displayed if the user's input is invalid
+                //Maybe use a FOR LOOP to test against user input and what is actually in the group3.inventory table?
+                //Also, which form will we be uploading the images to the database in? - AC
+
+
                 string productTest = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
                 MySqlConnection Conn = new MySqlConnection(productTest);
 
-                string selectStatement = "SELECT * FROM group3.inventory WHERE ItemIDNumber = '" + txtSKU.Text.Trim() + "'";
-                MySqlCommand selectComm = new MySqlCommand(selectStatement, Conn);
-                MySqlDataAdapter productDA = new MySqlDataAdapter(selectStatement, Conn);
+                string selectInventoryStatement = "SELECT * FROM group3.inventory WHERE ItemIDNumber = '" + txtSKU.Text.Trim() + "'";
+                MySqlCommand selectComm = new MySqlCommand(selectInventoryStatement, Conn);
+                MySqlDataAdapter productDA = new MySqlDataAdapter(selectInventoryStatement, Conn);
+                //Cannot delete - will currently cause error - AC
                 DataTable productTable = new DataTable();
 
                 productDA.Fill(productTable);
 
 
-                //THIS CODE HERE IS POPULATING THE TABLE AND OPENING UP THE INTERFACE IT DOES NOT ALLOW FOR THE PASSWORD ID CHECK
+
                 if (productTable.Rows.Count == 1)
                 {
                     MessageBox.Show("Success!");
-                    Image test = Image.FromFile("apple.jpg");
+                    Image test = Image.FromFile("aloe organic.jpeg");
                     pbProduct.Image = test;
-                    
+
 
                 }
+
+                else
+                    MessageBox.Show("Item not found. \n Invalid SKU Entered");
 
 
 
