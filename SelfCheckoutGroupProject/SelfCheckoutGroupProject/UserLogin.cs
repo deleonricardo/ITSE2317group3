@@ -43,7 +43,7 @@ namespace SelfCheckoutGroupProject
                 MySqlDataAdapter userDA = new MySqlDataAdapter(selectStatement, Conn);
                 DataTable userTable = new DataTable();
                 
-                userDA.Fill(userTable);
+               userDA.Fill(userTable);
 
 
                 //THIS CODE HERE IS POPULATING THE TABLE AND OPENING UP THE INTERFACE IT DOES NOT ALLOW FOR THE PASSWORD ID CHECK

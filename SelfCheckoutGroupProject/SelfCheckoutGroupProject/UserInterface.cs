@@ -70,14 +70,38 @@ namespace SelfCheckoutGroupProject
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+
             try  //try catch and populate labels RDL
             {
-                if (txtSKU.Text == frmMain.pProduct.sSKUNum)
+                string productTest = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
+                MySqlConnection Conn = new MySqlConnection(productTest);
+
+                string selectStatement = "SELECT * FROM group3.inventory WHERE ItemIDNumber = '" + txtSKU.Text.Trim() + "'";
+                MySqlCommand selectComm = new MySqlCommand(selectStatement, Conn);
+                MySqlDataAdapter productDA = new MySqlDataAdapter(selectStatement, Conn);
+                DataTable productTable = new DataTable();
+
+                productDA.Fill(productTable);
+
+
+                //THIS CODE HERE IS POPULATING THE TABLE AND OPENING UP THE INTERFACE IT DOES NOT ALLOW FOR THE PASSWORD ID CHECK
+                if (productTable.Rows.Count == 1)
                 {
-                    lblName.Text = frmMain.pProduct.sName;
-                    lblPrice.Text = frmMain.pProduct.dPrice.ToString();
-                    lblCount.Text = frmMain.pProduct.iCount.ToString();
+                    MessageBox.Show("Success!");
+                    Image test = Image.FromFile("apple.jpg");
+                    pbProduct.Image = test;
+                    
+
                 }
+
+
+
+                //if (txtSKU.Text == frmMain.pProduct.sSKUNum)
+                //{
+                //    lblName.Text = frmMain.pProduct.sName;
+                //    lblPrice.Text = frmMain.pProduct.dPrice.ToString();
+                //    lblCount.Text = frmMain.pProduct.iCount.ToString();
+                //}
             }
             catch (Exception a)
             {
