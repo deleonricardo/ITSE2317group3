@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Report";
+			this.btnManager = new System.Windows.Forms.Button();
+			this.SuspendLayout();
+			// 
+			// btnManager
+			// 
+			this.btnManager.Location = new System.Drawing.Point(25, 29);
+			this.btnManager.Name = "btnManager";
+			this.btnManager.Size = new System.Drawing.Size(77, 38);
+			this.btnManager.TabIndex = 0;
+			this.btnManager.Text = "&Back";
+			this.btnManager.UseVisualStyleBackColor = true;
+			// 
+			// Report
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.btnManager);
+			this.Name = "Report";
+			this.Text = "Report";
+			this.ResumeLayout(false);
+
         }
 
-        #endregion
-    }
+		#endregion
+
+		private System.Windows.Forms.Button btnManager;
+	}
 }
