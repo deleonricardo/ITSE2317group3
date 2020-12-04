@@ -35,6 +35,9 @@
 			this.rdoButtonInventory = new System.Windows.Forms.RadioButton();
 			this.btnEnter = new System.Windows.Forms.Button();
 			this.EmployeesDataGrid = new System.Windows.Forms.DataGridView();
+			this.btnAddEmployee = new System.Windows.Forms.Button();
+			this.btnRemoveEmployee = new System.Windows.Forms.Button();
+			this.btnCancel = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.EmployeesDataGrid)).BeginInit();
 			this.SuspendLayout();
@@ -52,7 +55,7 @@
 			this.groupBox1.Size = new System.Drawing.Size(263, 258);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "groupBox1";
+			this.groupBox1.Text = "Options";
 			// 
 			// rdoBtnSales
 			// 
@@ -73,7 +76,7 @@
 			// 
 			this.rdoBtnPass.Appearance = System.Windows.Forms.Appearance.Button;
 			this.rdoBtnPass.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.rdoBtnPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.rdoBtnPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.rdoBtnPass.Location = new System.Drawing.Point(7, 139);
 			this.rdoBtnPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.rdoBtnPass.Name = "rdoBtnPass";
@@ -116,6 +119,7 @@
 			// 
 			// btnEnter
 			// 
+			this.btnEnter.BackColor = System.Drawing.Color.Lime;
 			this.btnEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnEnter.Location = new System.Drawing.Point(20, 392);
 			this.btnEnter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -123,7 +127,7 @@
 			this.btnEnter.Size = new System.Drawing.Size(241, 49);
 			this.btnEnter.TabIndex = 1;
 			this.btnEnter.Text = "Accept";
-			this.btnEnter.UseVisualStyleBackColor = true;
+			this.btnEnter.UseVisualStyleBackColor = false;
 			this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
 			// 
 			// EmployeesDataGrid
@@ -136,17 +140,53 @@
 			this.EmployeesDataGrid.Size = new System.Drawing.Size(513, 336);
 			this.EmployeesDataGrid.TabIndex = 2;
 			// 
+			// btnAddEmployee
+			// 
+			this.btnAddEmployee.BackColor = System.Drawing.SystemColors.MenuHighlight;
+			this.btnAddEmployee.Location = new System.Drawing.Point(264, 460);
+			this.btnAddEmployee.Name = "btnAddEmployee";
+			this.btnAddEmployee.Size = new System.Drawing.Size(195, 55);
+			this.btnAddEmployee.TabIndex = 3;
+			this.btnAddEmployee.Text = "&Add Employee";
+			this.btnAddEmployee.UseVisualStyleBackColor = false;
+			this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
+			// 
+			// btnRemoveEmployee
+			// 
+			this.btnRemoveEmployee.BackColor = System.Drawing.Color.LightCoral;
+			this.btnRemoveEmployee.Location = new System.Drawing.Point(499, 460);
+			this.btnRemoveEmployee.Name = "btnRemoveEmployee";
+			this.btnRemoveEmployee.Size = new System.Drawing.Size(195, 55);
+			this.btnRemoveEmployee.TabIndex = 4;
+			this.btnRemoveEmployee.Text = "&Delete Employee";
+			this.btnRemoveEmployee.UseVisualStyleBackColor = false;
+			this.btnRemoveEmployee.Click += new System.EventHandler(this.btnRemoveEmployee_Click);
+			// 
+			// btnCancel
+			// 
+			this.btnCancel.Location = new System.Drawing.Point(714, 460);
+			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Size = new System.Drawing.Size(195, 55);
+			this.btnCancel.TabIndex = 5;
+			this.btnCancel.Text = "&Cancel";
+			this.btnCancel.UseVisualStyleBackColor = true;
+			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+			// 
 			// ManagerInterface
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(900, 562);
+			this.ClientSize = new System.Drawing.Size(953, 581);
+			this.Controls.Add(this.btnCancel);
+			this.Controls.Add(this.btnRemoveEmployee);
+			this.Controls.Add(this.btnAddEmployee);
 			this.Controls.Add(this.EmployeesDataGrid);
 			this.Controls.Add(this.btnEnter);
 			this.Controls.Add(this.groupBox1);
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.Name = "ManagerInterface";
 			this.Text = "ManagerInterface";
+			this.Load += new System.EventHandler(this.ManagerInterface_Load);
 			this.groupBox1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.EmployeesDataGrid)).EndInit();
 			this.ResumeLayout(false);
@@ -162,5 +202,8 @@
         private System.Windows.Forms.RadioButton rdoButtonInventory;
         private System.Windows.Forms.Button btnEnter;
 		private System.Windows.Forms.DataGridView EmployeesDataGrid;
+		private System.Windows.Forms.Button btnAddEmployee;
+		private System.Windows.Forms.Button btnRemoveEmployee;
+		private System.Windows.Forms.Button btnCancel;
 	}
 }

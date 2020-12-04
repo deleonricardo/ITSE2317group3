@@ -21,6 +21,7 @@ namespace SelfCheckoutGroupProject
         MySqlDataAdapter empDataAdapt;
         MySqlCommand sqlComm;
         DataSet empDataSet;
+        MySqlCommandBuilder empCommBuild;
         public ManagerInterface()
         {
             InitializeComponent();
@@ -54,6 +55,9 @@ namespace SelfCheckoutGroupProject
                 EmployeesDataGrid.DataSource = empDataSet ;
                 EmployeesDataGrid.DataMember = "employees";
 
+                btnAddEmployee.Show();
+                btnRemoveEmployee.Show();
+
             }
             if (rdoBtnSales.Checked == true)
             {
@@ -74,5 +78,34 @@ namespace SelfCheckoutGroupProject
 
 
         }
-    }
+
+		private void ManagerInterface_Load(object sender, EventArgs e)
+		{
+            //When the form loads, Hide the Add and Delete Employee Buttons. They will be visible once the Employees option is selected - AC
+            btnAddEmployee.Hide();
+            btnRemoveEmployee.Hide();
+		}
+
+		private void btnAddEmployee_Click(object sender, EventArgs e)
+		{
+            //This will add an Employee to the employee table in the MySql Database based on user input. Similar to the Inventory - AC
+            //Test is succsessful. New employees are added, and the columns that are not selected are defaulted to a value of 0 - AC
+            empCommBuild = new MySqlCommandBuilder(empDataAdapt);
+            empDataAdapt.Update(empDataSet, "employees");
+            MessageBox.Show("A new employee has been added! \n Employees table has been updated!");
+		}
+
+		private void btnCancel_Click(object sender, EventArgs e)
+		{
+            //Take the user back to the main menu
+            frmMain mainScreen = new frmMain();
+            mainScreen.Show();
+            this.Hide();
+		}
+
+		private void btnRemoveEmployee_Click(object sender, EventArgs e)
+		{
+            // Delete a selected row and the database will update - AC
+		}
+	}
 }

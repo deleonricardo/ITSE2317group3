@@ -102,7 +102,7 @@ namespace SelfCheckoutGroupProject
 
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
-			// The Delete Item button will delete a selected row  and update the database
+			// The Delete Item button will delete a selected row  and update the database - AC
 			
 		}
 	}
