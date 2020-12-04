@@ -14,8 +14,15 @@ using System.Data.SqlClient;
 
 namespace SelfCheckoutGroupProject
 {
+	
 	public partial class frmInventory : Form
 	{
+		MySqlCommandBuilder cmdBuilder;
+		MySqlConnection sqlConn;
+		MySqlDataAdapter dataApdapter;
+		MySqlCommand sqlCommand;
+		DataSet sqlDataSet;
+
 		public frmInventory()
 		{
 			InitializeComponent();
@@ -60,10 +67,9 @@ namespace SelfCheckoutGroupProject
 			//Please let me know so I can start entering in the new product data into the inventory table 
 			//- Andres
 			string connection = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
-			MySqlConnection sqlConn = new MySqlConnection(connection);
-			MySqlDataAdapter dataApdapter = new MySqlDataAdapter();
-			MySqlCommand sqlCommand;
-			DataSet sqlDataSet = new DataSet();
+			 sqlConn = new MySqlConnection(connection);
+			 dataApdapter = new MySqlDataAdapter();
+			 sqlDataSet = new DataSet();
 
 			string sqlStatement = "SELECT * FROM group3.inventory";
 			sqlCommand = new MySqlCommand(sqlStatement, sqlConn);
@@ -83,6 +89,22 @@ namespace SelfCheckoutGroupProject
         {
 
         }
-    }
+
+		private void btnAddItem_Click(object sender, EventArgs e)
+		{
+			//When the Add Item button is clicked, after a new prodruct has been typed into the datagridview, it will be inserted into
+			//the inventory table and the table will update accordingly. - AC
+			//Test is successful, Inventory table updates and adds in the data entered by the user as a new record - AC
+			cmdBuilder = new MySqlCommandBuilder(dataApdapter);
+			dataApdapter.Update(sqlDataSet, "inventory");
+			MessageBox.Show("Item Added. \n Inventory has been updated");
+		}
+
+		private void btnDelete_Click(object sender, EventArgs e)
+		{
+			// The Delete Item button will delete a selected row  and update the database
+			
+		}
+	}
 	
 }

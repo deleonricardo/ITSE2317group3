@@ -16,6 +16,11 @@ namespace SelfCheckoutGroupProject
 {
     public partial class ManagerInterface : Form
     {
+
+        MySqlConnection empConn;
+        MySqlDataAdapter empDataAdapt;
+        MySqlCommand sqlComm;
+        DataSet empDataSet;
         public ManagerInterface()
         {
             InitializeComponent();
@@ -33,6 +38,21 @@ namespace SelfCheckoutGroupProject
             if (rdoBtnEmployeeList.Checked == true)
             {
                 //display employee list in listbox - rdl
+                //This has been changed to a DataGridView Control which will display the list of employees currently in the group3.employee table - AC
+                string connection = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
+                empConn = new MySqlConnection(connection);
+                empDataAdapt = new MySqlDataAdapter();
+                empDataSet = new DataSet();
+
+                string sqlStatement = "SELECT EmployeeID, EmployeeName, Email, Password FROM group3.employees";
+                sqlComm = new MySqlCommand(sqlStatement, empConn);
+                sqlComm.Connection = empConn;
+
+                empDataAdapt.SelectCommand = sqlComm;
+
+                empDataAdapt.Fill(empDataSet, "employees");
+                EmployeesDataGrid.DataSource = empDataSet ;
+                EmployeesDataGrid.DataMember = "employees";
 
             }
             if (rdoBtnSales.Checked == true)
