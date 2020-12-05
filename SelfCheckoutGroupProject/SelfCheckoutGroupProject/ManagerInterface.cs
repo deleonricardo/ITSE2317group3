@@ -62,6 +62,10 @@ namespace SelfCheckoutGroupProject
             if (rdoBtnSales.Checked == true)
             {
                 //display total sales amount for day
+                //Take the user to Report Form (Testing Only) - AC
+                Report reportForm = new Report();
+                reportForm.Show();
+                this.Hide();
             }
             if (rdoBtnPass.Checked == true)
             {
