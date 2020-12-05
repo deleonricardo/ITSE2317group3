@@ -18,7 +18,7 @@ namespace SelfCheckoutGroupProject
     {
         double cost;
         double dSubTotal, dTotal;
-
+        MySqlDataReader testReader;
         public UserInterface()
         {
             InitializeComponent();
@@ -81,22 +81,34 @@ namespace SelfCheckoutGroupProject
 
                 string productTest = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
                 MySqlConnection Conn = new MySqlConnection(productTest);
+                Conn.Open();
 
                 string selectInventoryStatement = "SELECT * FROM group3.inventory WHERE ItemIDNumber = '" + txtSKU.Text.Trim() + "'";
                 MySqlCommand selectComm = new MySqlCommand(selectInventoryStatement, Conn);
+               
                 MySqlDataAdapter productDA = new MySqlDataAdapter(selectInventoryStatement, Conn);
                 //Cannot delete - will currently cause error - AC
                 DataTable productTable = new DataTable();
 
                 productDA.Fill(productTable);
+                testReader = selectComm.ExecuteReader();
+
+              
 
 
 
                 if (productTable.Rows.Count == 1)
                 {
+                    //This will fill in the name price and QTY labels depending on the SKU entered.
+                    //Test is successful. Image needs to change to reflect the correct Item
+                    //Everything else updates to reflect the correct item
                     MessageBox.Show("Success!");
                     Image test = Image.FromFile("aloe organic.jpeg");
                     pbProduct.Image = test;
+                    testReader.Read();
+                    lblName.Text = testReader["ItemName"].ToString();
+                    lblPrice.Text = testReader["Price"].ToString();
+                    lblCount.Text = testReader["QTY"].ToString();
 
 
                 }
@@ -112,10 +124,14 @@ namespace SelfCheckoutGroupProject
                 //    lblPrice.Text = frmMain.pProduct.dPrice.ToString();
                 //    lblCount.Text = frmMain.pProduct.iCount.ToString();
                 //}
+                testReader.Close();
+                Conn.Close();
+
             }
             catch (Exception a)
             {
                 MessageBox.Show(a.Message);
+                
             }
         }
     }
