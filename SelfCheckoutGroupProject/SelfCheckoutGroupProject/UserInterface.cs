@@ -12,6 +12,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 
+using System.IO;
 namespace SelfCheckoutGroupProject
 {
     public partial class UserInterface : Form
@@ -20,6 +21,8 @@ namespace SelfCheckoutGroupProject
         double dSubTotal, dTotal;
         int userQTYTest;
         MySqlDataReader testReader;
+        MySqlDataReader imageReader;
+        MySqlConnection imgConn;
         public UserInterface()
         {
             InitializeComponent();
@@ -94,7 +97,7 @@ namespace SelfCheckoutGroupProject
                 productDA.Fill(productTable);
                 testReader = selectComm.ExecuteReader();
 
-              
+
 
 
 
@@ -104,33 +107,64 @@ namespace SelfCheckoutGroupProject
                     //Test is successful. Image needs to change to reflect the correct Item
                     //Everything else updates to reflect the correct item
                     MessageBox.Show("Success!");
-                    Image test = Image.FromFile("aloe organic.jpeg");
-                    pbProduct.Image = test;
+
+                    //Change the image based on user input - AC
+                    //Will also use this code on manager interface when they a select a row in the datagridview
+                    string testConn = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
+                    MySqlConnection imageConn = new MySqlConnection(testConn);
+                    imageConn.Open();
+
+                    string testCommand = "SELECT image FROM group3.images WHERE inventory_ItemIDNumber = '"+txtSKU.Text.Trim()+"'";
+                    MySqlCommand cmd = new MySqlCommand(testCommand, imageConn);
+                    MySqlDataAdapter testDA = new MySqlDataAdapter(cmd);
+                    DataSet testDS = new DataSet();
+                    testDA.Fill(testDS, "images");
+                    int c = testDS.Tables["images"].Rows.Count;
+
+                    if (c > 0)
+                    {
+                        Byte[] byteTest = new Byte[0];
+                        byteTest = (Byte[])(testDS.Tables["images"].Rows[c - 1]["image"]);
+                        MemoryStream stream = new MemoryStream(byteTest);
+                        pbProduct.Image = Image.FromStream(stream);
+             
+                    }
+                    imageConn.Close();
                     
+
+
+
+
                     //Update the QTY field in the database to subtract whatever quanity is entered by the user
-                   // string qtyUpdate = "UPDATE group3.inventory SET QTY = "+int.Parse(testReader["QTY"].ToString())+" - " + int.Parse(txtOrderNum.Text) + "WHERE ItemIDNumber = '" + txtSKU.Text.Trim() + "'";
+                    // string qtyUpdate = "UPDATE group3.inventory SET QTY = "+int.Parse(testReader["QTY"].ToString())+" - " + int.Parse(txtOrderNum.Text) + "WHERE ItemIDNumber = '" + txtSKU.Text.Trim() + "'";
                     testReader.Read();
                     lblName.Text = testReader["ItemName"].ToString();
                     lblPrice.Text = testReader["Price"].ToString();
                     lblCount.Text = testReader["QTY"].ToString();
-                   
+
 
                 }
 
                 else
+                {
                     MessageBox.Show("Item not found. \n Invalid SKU Entered");
+                    txtSKU.Text = string.Empty;
+                }
 
 
 
-                //if (txtSKU.Text == frmMain.pProduct.sSKUNum)
-                //{
-                //    lblName.Text = frmMain.pProduct.sName;
-                //    lblPrice.Text = frmMain.pProduct.dPrice.ToString();
-                //    lblCount.Text = frmMain.pProduct.iCount.ToString();
-                //}
-                testReader.Close();
-                Conn.Close();
+                    //if (txtSKU.Text == frmMain.pProduct.sSKUNum)
+                    //{
+                    //    lblName.Text = frmMain.pProduct.sName;
+                    //    lblPrice.Text = frmMain.pProduct.dPrice.ToString();
+                    //    lblCount.Text = frmMain.pProduct.iCount.ToString();
+                    //}
+                    testReader.Close();
+                    Conn.Close();
+               
+                   
 
+                
             }
             catch (Exception a)
             {
