@@ -18,6 +18,7 @@ namespace SelfCheckoutGroupProject
     {
         double cost;
         double dSubTotal, dTotal;
+        int userQTYTest;
         MySqlDataReader testReader;
         public UserInterface()
         {
@@ -105,11 +106,14 @@ namespace SelfCheckoutGroupProject
                     MessageBox.Show("Success!");
                     Image test = Image.FromFile("aloe organic.jpeg");
                     pbProduct.Image = test;
+                    
+                    //Update the QTY field in the database to subtract whatever quanity is entered by the user
+                   // string qtyUpdate = "UPDATE group3.inventory SET QTY = "+int.Parse(testReader["QTY"].ToString())+" - " + int.Parse(txtOrderNum.Text) + "WHERE ItemIDNumber = '" + txtSKU.Text.Trim() + "'";
                     testReader.Read();
                     lblName.Text = testReader["ItemName"].ToString();
                     lblPrice.Text = testReader["Price"].ToString();
                     lblCount.Text = testReader["QTY"].ToString();
-
+                   
 
                 }
 
