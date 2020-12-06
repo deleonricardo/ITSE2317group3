@@ -32,7 +32,10 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnAddItem = new System.Windows.Forms.Button();
 			this.btnDelete = new System.Windows.Forms.Button();
+			this.pbNewItem = new System.Windows.Forms.PictureBox();
+			this.btnUploadImage = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pbNewItem)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dataGridView1
@@ -68,7 +71,7 @@
 			// 
 			// btnDelete
 			// 
-			this.btnDelete.Location = new System.Drawing.Point(356, 483);
+			this.btnDelete.Location = new System.Drawing.Point(452, 483);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(144, 56);
 			this.btnDelete.TabIndex = 3;
@@ -76,9 +79,29 @@
 			this.btnDelete.UseVisualStyleBackColor = true;
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
+			// pbNewItem
+			// 
+			this.pbNewItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pbNewItem.Location = new System.Drawing.Point(222, 456);
+			this.pbNewItem.Name = "pbNewItem";
+			this.pbNewItem.Size = new System.Drawing.Size(175, 112);
+			this.pbNewItem.TabIndex = 4;
+			this.pbNewItem.TabStop = false;
+			// 
+			// btnUploadImage
+			// 
+			this.btnUploadImage.Location = new System.Drawing.Point(238, 585);
+			this.btnUploadImage.Name = "btnUploadImage";
+			this.btnUploadImage.Size = new System.Drawing.Size(144, 56);
+			this.btnUploadImage.TabIndex = 5;
+			this.btnUploadImage.Text = "&Upload Image";
+			this.btnUploadImage.UseVisualStyleBackColor = true;
+			// 
 			// frmInventory
 			// 
 			this.ClientSize = new System.Drawing.Size(713, 694);
+			this.Controls.Add(this.btnUploadImage);
+			this.Controls.Add(this.pbNewItem);
 			this.Controls.Add(this.btnDelete);
 			this.Controls.Add(this.btnAddItem);
 			this.Controls.Add(this.label1);
@@ -86,6 +109,7 @@
 			this.Name = "frmInventory";
 			this.Load += new System.EventHandler(this.frmInventory_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pbNewItem)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -109,5 +133,7 @@
         private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button btnAddItem;
 		private System.Windows.Forms.Button btnDelete;
+		private System.Windows.Forms.PictureBox pbNewItem;
+		private System.Windows.Forms.Button btnUploadImage;
 	}
 }
