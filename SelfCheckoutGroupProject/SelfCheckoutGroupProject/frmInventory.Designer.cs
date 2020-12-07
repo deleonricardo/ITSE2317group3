@@ -35,6 +35,10 @@
 			this.pbNewItem = new System.Windows.Forms.PictureBox();
 			this.btnUploadImage = new System.Windows.Forms.Button();
 			this.btnCancel = new System.Windows.Forms.Button();
+			this.label2 = new System.Windows.Forms.Label();
+			this.txtImageName = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.txtProdNum = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbNewItem)).BeginInit();
 			this.SuspendLayout();
@@ -63,7 +67,7 @@
 			// btnAddItem
 			// 
 			this.btnAddItem.BackColor = System.Drawing.Color.Lime;
-			this.btnAddItem.Location = new System.Drawing.Point(772, 51);
+			this.btnAddItem.Location = new System.Drawing.Point(786, 451);
 			this.btnAddItem.Name = "btnAddItem";
 			this.btnAddItem.Size = new System.Drawing.Size(144, 56);
 			this.btnAddItem.TabIndex = 2;
@@ -74,7 +78,7 @@
 			// btnDelete
 			// 
 			this.btnDelete.BackColor = System.Drawing.Color.LightCoral;
-			this.btnDelete.Location = new System.Drawing.Point(1101, 51);
+			this.btnDelete.Location = new System.Drawing.Point(1136, 451);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(144, 56);
 			this.btnDelete.TabIndex = 3;
@@ -85,9 +89,9 @@
 			// pbNewItem
 			// 
 			this.pbNewItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pbNewItem.Location = new System.Drawing.Point(907, 113);
+			this.pbNewItem.Location = new System.Drawing.Point(962, 51);
 			this.pbNewItem.Name = "pbNewItem";
-			this.pbNewItem.Size = new System.Drawing.Size(199, 136);
+			this.pbNewItem.Size = new System.Drawing.Size(201, 162);
 			this.pbNewItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pbNewItem.TabIndex = 4;
 			this.pbNewItem.TabStop = false;
@@ -96,16 +100,17 @@
 			// btnUploadImage
 			// 
 			this.btnUploadImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-			this.btnUploadImage.Location = new System.Drawing.Point(937, 51);
+			this.btnUploadImage.Location = new System.Drawing.Point(962, 451);
 			this.btnUploadImage.Name = "btnUploadImage";
 			this.btnUploadImage.Size = new System.Drawing.Size(144, 56);
 			this.btnUploadImage.TabIndex = 5;
 			this.btnUploadImage.Text = "&Upload Image";
 			this.btnUploadImage.UseVisualStyleBackColor = false;
+			this.btnUploadImage.Click += new System.EventHandler(this.btnUploadImage_Click);
 			// 
 			// btnCancel
 			// 
-			this.btnCancel.Location = new System.Drawing.Point(1101, 451);
+			this.btnCancel.Location = new System.Drawing.Point(1307, 451);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(144, 56);
 			this.btnCancel.TabIndex = 6;
@@ -113,9 +118,45 @@
 			this.btnCancel.UseVisualStyleBackColor = true;
 			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
 			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(847, 233);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(147, 20);
+			this.label2.TabIndex = 7;
+			this.label2.Text = "Enter Image Name:";
+			// 
+			// txtImageName
+			// 
+			this.txtImageName.Location = new System.Drawing.Point(1001, 233);
+			this.txtImageName.Name = "txtImageName";
+			this.txtImageName.Size = new System.Drawing.Size(162, 26);
+			this.txtImageName.TabIndex = 8;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(851, 286);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(163, 20);
+			this.label3.TabIndex = 9;
+			this.label3.Text = "New Product Number:";
+			// 
+			// txtProdNum
+			// 
+			this.txtProdNum.Location = new System.Drawing.Point(1021, 286);
+			this.txtProdNum.Name = "txtProdNum";
+			this.txtProdNum.Size = new System.Drawing.Size(142, 26);
+			this.txtProdNum.TabIndex = 10;
+			// 
 			// frmInventory
 			// 
-			this.ClientSize = new System.Drawing.Size(1355, 557);
+			this.ClientSize = new System.Drawing.Size(1588, 663);
+			this.Controls.Add(this.txtProdNum);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.txtImageName);
+			this.Controls.Add(this.label2);
 			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.btnUploadImage);
 			this.Controls.Add(this.pbNewItem);
@@ -153,5 +194,9 @@
 		private System.Windows.Forms.PictureBox pbNewItem;
 		private System.Windows.Forms.Button btnUploadImage;
 		private System.Windows.Forms.Button btnCancel;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.TextBox txtImageName;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.TextBox txtProdNum;
 	}
 }

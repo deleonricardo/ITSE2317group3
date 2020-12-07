@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 using MySql.Data;
 using MySql.Data.MySqlClient;
@@ -124,6 +125,43 @@ namespace SelfCheckoutGroupProject
 			ManagerInterface manager = new ManagerInterface();
 			manager.Show();
 			this.Hide();
+		}
+
+		private void btnUploadImage_Click(object sender, EventArgs e)
+		{
+			string connection = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
+			MySqlConnection imgConn = new MySqlConnection(connection);
+			dataApdapter = new MySqlDataAdapter();
+			sqlDataSet = new DataSet();
+			MySqlCommand imgCommand;
+			//Clicking the Upload Image button will upload the image that it is in the picture box
+
+			MemoryStream memStream = new MemoryStream();
+			pbNewItem.Image.Save(memStream, pbNewItem.Image.RawFormat);
+			byte[] newImage = memStream.ToArray();
+			string sqlInsert = "INSERT INTO group3.images(imageID, imageName, image, inventory_ItemIDNumber) VALUES (imageID, @imageName, @image, @inventory_ItemIDNUmber)";
+			imgConn.Open();
+			imgCommand = new MySqlCommand(sqlInsert, imgConn);
+			imgCommand.Parameters.Add("@imageName", MySqlDbType.VarChar, 50);
+			imgCommand.Parameters.Add("@image", MySqlDbType.MediumBlob);
+			imgCommand.Parameters.Add("@inventory_ItemIDNUmber", MySqlDbType.Int32);
+
+			imgCommand.Parameters["@imageName"].Value = txtImageName.Text;
+			imgCommand.Parameters["@image"].Value = newImage;
+			imgCommand.Parameters["@inventory_ItemIDNUmber"].Value = txtProdNum.Text;
+
+			if (imgCommand.ExecuteNonQuery() == 1)
+			{
+				MessageBox.Show("New Image Data Inserted!");
+				
+			}
+
+			txtImageName.Text = string.Empty;
+			txtProdNum.Text = string.Empty;
+			imgConn.Close();
+
+
+
 		}
 	}
 	
