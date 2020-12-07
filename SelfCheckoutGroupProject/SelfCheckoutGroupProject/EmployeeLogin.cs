@@ -47,5 +47,13 @@ namespace SelfCheckoutGroupProject
                 }
             
         }
-    }
+
+		private void btnCancel_Click(object sender, EventArgs e)
+		{
+            //Takes the user back to the main screen - AC
+            frmMain mainScreen = new frmMain();
+            mainScreen.Show();
+            this.Hide();
+		}
+	}
 }

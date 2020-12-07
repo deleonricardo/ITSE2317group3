@@ -28,69 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
+			this.lblEmpName = new System.Windows.Forms.Label();
+			this.lblEmpID = new System.Windows.Forms.Label();
+			this.lblManPW = new System.Windows.Forms.Label();
 			this.txtName = new System.Windows.Forms.TextBox();
 			this.txtEmpID = new System.Windows.Forms.TextBox();
 			this.txtPassword = new System.Windows.Forms.TextBox();
 			this.btnUpdatePass = new System.Windows.Forms.Button();
 			this.btnCancel = new System.Windows.Forms.Button();
-			this.label4 = new System.Windows.Forms.Label();
+			this.lblEmail = new System.Windows.Forms.Label();
 			this.txtEmail = new System.Windows.Forms.TextBox();
+			this.lblResetCode = new System.Windows.Forms.Label();
+			this.txtResetCode = new System.Windows.Forms.TextBox();
+			this.lblVerifyCode = new System.Windows.Forms.Label();
+			this.txtVerifyCode = new System.Windows.Forms.TextBox();
+			this.btnResetPass = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
-			// label1
+			// lblEmpName
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(147, 118);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(129, 20);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Employee Name:";
+			this.lblEmpName.AutoSize = true;
+			this.lblEmpName.Location = new System.Drawing.Point(172, 63);
+			this.lblEmpName.Name = "lblEmpName";
+			this.lblEmpName.Size = new System.Drawing.Size(129, 20);
+			this.lblEmpName.TabIndex = 0;
+			this.lblEmpName.Text = "Employee Name:";
 			// 
-			// label2
+			// lblEmpID
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(147, 163);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(104, 20);
-			this.label2.TabIndex = 2;
-			this.label2.Text = "Employee ID:";
+			this.lblEmpID.AutoSize = true;
+			this.lblEmpID.Location = new System.Drawing.Point(172, 108);
+			this.lblEmpID.Name = "lblEmpID";
+			this.lblEmpID.Size = new System.Drawing.Size(104, 20);
+			this.lblEmpID.TabIndex = 2;
+			this.lblEmpID.Text = "Employee ID:";
 			// 
-			// label3
+			// lblManPW
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(147, 265);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(192, 20);
-			this.label3.TabIndex = 6;
-			this.label3.Text = "Enter Manager Password:";
+			this.lblManPW.AutoSize = true;
+			this.lblManPW.Location = new System.Drawing.Point(172, 210);
+			this.lblManPW.Name = "lblManPW";
+			this.lblManPW.Size = new System.Drawing.Size(192, 20);
+			this.lblManPW.TabIndex = 6;
+			this.lblManPW.Text = "Enter Manager Password:";
 			// 
 			// txtName
 			// 
-			this.txtName.Location = new System.Drawing.Point(282, 115);
+			this.txtName.Location = new System.Drawing.Point(364, 57);
 			this.txtName.Name = "txtName";
 			this.txtName.Size = new System.Drawing.Size(150, 26);
 			this.txtName.TabIndex = 1;
 			// 
 			// txtEmpID
 			// 
-			this.txtEmpID.Location = new System.Drawing.Point(282, 160);
+			this.txtEmpID.Location = new System.Drawing.Point(364, 105);
 			this.txtEmpID.Name = "txtEmpID";
 			this.txtEmpID.Size = new System.Drawing.Size(150, 26);
 			this.txtEmpID.TabIndex = 3;
 			// 
 			// txtPassword
 			// 
-			this.txtPassword.Location = new System.Drawing.Point(345, 262);
+			this.txtPassword.Location = new System.Drawing.Point(370, 207);
 			this.txtPassword.Name = "txtPassword";
 			this.txtPassword.Size = new System.Drawing.Size(144, 26);
 			this.txtPassword.TabIndex = 7;
 			// 
 			// btnUpdatePass
 			// 
-			this.btnUpdatePass.Location = new System.Drawing.Point(151, 337);
+			this.btnUpdatePass.Location = new System.Drawing.Point(240, 428);
 			this.btnUpdatePass.Name = "btnUpdatePass";
 			this.btnUpdatePass.Size = new System.Drawing.Size(165, 36);
 			this.btnUpdatePass.TabIndex = 8;
@@ -99,7 +104,7 @@
 			// 
 			// btnCancel
 			// 
-			this.btnCancel.Location = new System.Drawing.Point(345, 341);
+			this.btnCancel.Location = new System.Drawing.Point(434, 432);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(123, 29);
 			this.btnCancel.TabIndex = 9;
@@ -107,39 +112,86 @@
 			this.btnCancel.UseVisualStyleBackColor = true;
 			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
 			// 
-			// label4
+			// lblEmail
 			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(150, 214);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(126, 20);
-			this.label4.TabIndex = 4;
-			this.label4.Text = "Employee Email:";
+			this.lblEmail.AutoSize = true;
+			this.lblEmail.Location = new System.Drawing.Point(175, 159);
+			this.lblEmail.Name = "lblEmail";
+			this.lblEmail.Size = new System.Drawing.Size(126, 20);
+			this.lblEmail.TabIndex = 4;
+			this.lblEmail.Text = "Employee Email:";
 			// 
 			// txtEmail
 			// 
-			this.txtEmail.Location = new System.Drawing.Point(283, 211);
+			this.txtEmail.Location = new System.Drawing.Point(364, 156);
 			this.txtEmail.Name = "txtEmail";
 			this.txtEmail.Size = new System.Drawing.Size(149, 26);
 			this.txtEmail.TabIndex = 5;
+			// 
+			// lblResetCode
+			// 
+			this.lblResetCode.AutoSize = true;
+			this.lblResetCode.Location = new System.Drawing.Point(179, 264);
+			this.lblResetCode.Name = "lblResetCode";
+			this.lblResetCode.Size = new System.Drawing.Size(98, 20);
+			this.lblResetCode.TabIndex = 10;
+			this.lblResetCode.Text = "Reset Code:";
+			// 
+			// txtResetCode
+			// 
+			this.txtResetCode.Location = new System.Drawing.Point(364, 261);
+			this.txtResetCode.Name = "txtResetCode";
+			this.txtResetCode.Size = new System.Drawing.Size(150, 26);
+			this.txtResetCode.TabIndex = 11;
+			// 
+			// lblVerifyCode
+			// 
+			this.lblVerifyCode.AutoSize = true;
+			this.lblVerifyCode.Location = new System.Drawing.Point(179, 309);
+			this.lblVerifyCode.Name = "lblVerifyCode";
+			this.lblVerifyCode.Size = new System.Drawing.Size(142, 20);
+			this.lblVerifyCode.TabIndex = 12;
+			this.lblVerifyCode.Text = "Verify Reset Code:";
+			// 
+			// txtVerifyCode
+			// 
+			this.txtVerifyCode.Location = new System.Drawing.Point(364, 309);
+			this.txtVerifyCode.Name = "txtVerifyCode";
+			this.txtVerifyCode.Size = new System.Drawing.Size(150, 26);
+			this.txtVerifyCode.TabIndex = 13;
+			// 
+			// btnResetPass
+			// 
+			this.btnResetPass.Location = new System.Drawing.Point(348, 375);
+			this.btnResetPass.Name = "btnResetPass";
+			this.btnResetPass.Size = new System.Drawing.Size(165, 36);
+			this.btnResetPass.TabIndex = 14;
+			this.btnResetPass.Text = "&Reset Password";
+			this.btnResetPass.UseVisualStyleBackColor = true;
 			// 
 			// UpdatePassword
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(886, 522);
+			this.Controls.Add(this.btnResetPass);
+			this.Controls.Add(this.txtVerifyCode);
+			this.Controls.Add(this.lblVerifyCode);
+			this.Controls.Add(this.txtResetCode);
+			this.Controls.Add(this.lblResetCode);
 			this.Controls.Add(this.txtEmail);
-			this.Controls.Add(this.label4);
+			this.Controls.Add(this.lblEmail);
 			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.btnUpdatePass);
 			this.Controls.Add(this.txtPassword);
 			this.Controls.Add(this.txtEmpID);
 			this.Controls.Add(this.txtName);
-			this.Controls.Add(this.label3);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.lblManPW);
+			this.Controls.Add(this.lblEmpID);
+			this.Controls.Add(this.lblEmpName);
 			this.Name = "UpdatePassword";
 			this.Text = "UpdatePassword";
+			this.Load += new System.EventHandler(this.UpdatePassword_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -147,15 +199,20 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label lblEmpName;
+		private System.Windows.Forms.Label lblEmpID;
+		private System.Windows.Forms.Label lblManPW;
 		private System.Windows.Forms.TextBox txtName;
 		private System.Windows.Forms.TextBox txtEmpID;
 		private System.Windows.Forms.TextBox txtPassword;
 		private System.Windows.Forms.Button btnUpdatePass;
 		private System.Windows.Forms.Button btnCancel;
-		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Label lblEmail;
 		private System.Windows.Forms.TextBox txtEmail;
+		private System.Windows.Forms.Label lblResetCode;
+		private System.Windows.Forms.TextBox txtResetCode;
+		private System.Windows.Forms.Label lblVerifyCode;
+		private System.Windows.Forms.TextBox txtVerifyCode;
+		private System.Windows.Forms.Button btnResetPass;
 	}
 }

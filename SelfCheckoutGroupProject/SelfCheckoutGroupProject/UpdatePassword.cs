@@ -32,5 +32,17 @@ namespace SelfCheckoutGroupProject
             managerInterfaceScreen.Show();
             this.Hide();
 		}
+
+		private void UpdatePassword_Load(object sender, EventArgs e)
+		{
+            //When this form loads, Hide the Reset Code and Verify Reset Code labels and textboxes - AC
+            lblResetCode.Hide();
+            lblVerifyCode.Hide();
+            txtResetCode.Hide();
+            txtVerifyCode.Hide();
+            btnResetPass.Hide();
+
+
+		}
 	}
 }
