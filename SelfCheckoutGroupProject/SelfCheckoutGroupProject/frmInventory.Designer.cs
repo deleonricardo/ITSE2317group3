@@ -62,22 +62,24 @@
 			// 
 			// btnAddItem
 			// 
+			this.btnAddItem.BackColor = System.Drawing.Color.Lime;
 			this.btnAddItem.Location = new System.Drawing.Point(772, 51);
 			this.btnAddItem.Name = "btnAddItem";
 			this.btnAddItem.Size = new System.Drawing.Size(144, 56);
 			this.btnAddItem.TabIndex = 2;
 			this.btnAddItem.Text = "&Add Item";
-			this.btnAddItem.UseVisualStyleBackColor = true;
+			this.btnAddItem.UseVisualStyleBackColor = false;
 			this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
 			// 
 			// btnDelete
 			// 
+			this.btnDelete.BackColor = System.Drawing.Color.LightCoral;
 			this.btnDelete.Location = new System.Drawing.Point(1101, 51);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(144, 56);
 			this.btnDelete.TabIndex = 3;
 			this.btnDelete.Text = "Confirm &Delete";
-			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.UseVisualStyleBackColor = false;
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// pbNewItem
@@ -93,12 +95,13 @@
 			// 
 			// btnUploadImage
 			// 
+			this.btnUploadImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
 			this.btnUploadImage.Location = new System.Drawing.Point(937, 51);
 			this.btnUploadImage.Name = "btnUploadImage";
 			this.btnUploadImage.Size = new System.Drawing.Size(144, 56);
 			this.btnUploadImage.TabIndex = 5;
 			this.btnUploadImage.Text = "&Upload Image";
-			this.btnUploadImage.UseVisualStyleBackColor = true;
+			this.btnUploadImage.UseVisualStyleBackColor = false;
 			// 
 			// btnCancel
 			// 
