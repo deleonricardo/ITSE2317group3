@@ -114,7 +114,9 @@ namespace SelfCheckoutGroupProject
                     MySqlConnection imageConn = new MySqlConnection(testConn);
                     imageConn.Open();
 
-                    string testCommand = "SELECT image FROM group3.images WHERE inventory_ItemIDNumber = '"+txtSKU.Text.Trim()+"'";
+                    //Used an INNER JOIN to show images that match from both group3.images and group3.inventory based on
+                    //the SKU entered by the user - AC
+                    string testCommand = "SELECT image FROM group3.images INNER JOIN group3.inventory ON group3.images.inventory_ItemIDNumber = group3.inventory.ItemIDNumber WHERE inventory_ItemIDNumber = '" + txtSKU.Text.Trim()+"'";
                     MySqlCommand cmd = new MySqlCommand(testCommand, imageConn);
                     MySqlDataAdapter testDA = new MySqlDataAdapter(cmd);
                     DataSet testDS = new DataSet();

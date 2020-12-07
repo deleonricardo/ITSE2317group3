@@ -105,6 +105,24 @@ namespace SelfCheckoutGroupProject
 			// The Delete Item button will delete a selected row  and update the database - AC
 			
 		}
+
+		private void pbNewItem_Click(object sender, EventArgs e)
+		{
+			//When this picture box control is clicked, the user will be able to select an image to upload to the database - AC
+			OpenFileDialog userImage = new OpenFileDialog();
+			if (userImage.ShowDialog() == DialogResult.OK)
+			{
+				pbNewItem.Image = Image.FromFile(userImage.FileName);
+			}
+		}
+
+		private void btnCancel_Click(object sender, EventArgs e)
+		{
+			//Takes the user back to the Manager Interface screen - AC
+			ManagerInterface manager = new ManagerInterface();
+			manager.Show();
+			this.Hide();
+		}
 	}
 	
 }

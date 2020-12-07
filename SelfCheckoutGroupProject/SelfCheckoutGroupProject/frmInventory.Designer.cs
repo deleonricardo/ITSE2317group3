@@ -34,6 +34,7 @@
 			this.btnDelete = new System.Windows.Forms.Button();
 			this.pbNewItem = new System.Windows.Forms.PictureBox();
 			this.btnUploadImage = new System.Windows.Forms.Button();
+			this.btnCancel = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbNewItem)).BeginInit();
 			this.SuspendLayout();
@@ -45,7 +46,7 @@
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowHeadersWidth = 62;
 			this.dataGridView1.RowTemplate.Height = 24;
-			this.dataGridView1.Size = new System.Drawing.Size(584, 386);
+			this.dataGridView1.Size = new System.Drawing.Size(721, 392);
 			this.dataGridView1.TabIndex = 0;
 			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
 			// 
@@ -61,7 +62,7 @@
 			// 
 			// btnAddItem
 			// 
-			this.btnAddItem.Location = new System.Drawing.Point(51, 483);
+			this.btnAddItem.Location = new System.Drawing.Point(772, 51);
 			this.btnAddItem.Name = "btnAddItem";
 			this.btnAddItem.Size = new System.Drawing.Size(144, 56);
 			this.btnAddItem.TabIndex = 2;
@@ -71,7 +72,7 @@
 			// 
 			// btnDelete
 			// 
-			this.btnDelete.Location = new System.Drawing.Point(452, 483);
+			this.btnDelete.Location = new System.Drawing.Point(1101, 51);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(144, 56);
 			this.btnDelete.TabIndex = 3;
@@ -82,24 +83,37 @@
 			// pbNewItem
 			// 
 			this.pbNewItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pbNewItem.Location = new System.Drawing.Point(222, 456);
+			this.pbNewItem.Location = new System.Drawing.Point(907, 113);
 			this.pbNewItem.Name = "pbNewItem";
-			this.pbNewItem.Size = new System.Drawing.Size(175, 112);
+			this.pbNewItem.Size = new System.Drawing.Size(199, 136);
+			this.pbNewItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pbNewItem.TabIndex = 4;
 			this.pbNewItem.TabStop = false;
+			this.pbNewItem.Click += new System.EventHandler(this.pbNewItem_Click);
 			// 
 			// btnUploadImage
 			// 
-			this.btnUploadImage.Location = new System.Drawing.Point(238, 585);
+			this.btnUploadImage.Location = new System.Drawing.Point(937, 51);
 			this.btnUploadImage.Name = "btnUploadImage";
 			this.btnUploadImage.Size = new System.Drawing.Size(144, 56);
 			this.btnUploadImage.TabIndex = 5;
 			this.btnUploadImage.Text = "&Upload Image";
 			this.btnUploadImage.UseVisualStyleBackColor = true;
 			// 
+			// btnCancel
+			// 
+			this.btnCancel.Location = new System.Drawing.Point(1101, 451);
+			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Size = new System.Drawing.Size(144, 56);
+			this.btnCancel.TabIndex = 6;
+			this.btnCancel.Text = "&Cancel";
+			this.btnCancel.UseVisualStyleBackColor = true;
+			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+			// 
 			// frmInventory
 			// 
-			this.ClientSize = new System.Drawing.Size(713, 694);
+			this.ClientSize = new System.Drawing.Size(1355, 557);
+			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.btnUploadImage);
 			this.Controls.Add(this.pbNewItem);
 			this.Controls.Add(this.btnDelete);
@@ -135,5 +149,6 @@
 		private System.Windows.Forms.Button btnDelete;
 		private System.Windows.Forms.PictureBox pbNewItem;
 		private System.Windows.Forms.Button btnUploadImage;
+		private System.Windows.Forms.Button btnCancel;
 	}
 }
