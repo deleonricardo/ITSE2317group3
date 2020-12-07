@@ -45,7 +45,8 @@ namespace SelfCheckoutGroupProject
                 empDataAdapt = new MySqlDataAdapter();
                 empDataSet = new DataSet();
 
-                string sqlStatement = "SELECT EmployeeID, EmployeeName, Email, Password FROM group3.employees";
+
+                string sqlStatement = "SELECT * FROM group3.employees; UPDATE group3.employees SET Total_Hours = Daily_Hours * 5; UPDATE group3.employees SET Total_Pay = Total_Hours * Pay;";
                 sqlComm = new MySqlCommand(sqlStatement, empConn);
                 sqlComm.Connection = empConn;
 
@@ -54,6 +55,8 @@ namespace SelfCheckoutGroupProject
                 empDataAdapt.Fill(empDataSet, "employees");
                 EmployeesDataGrid.DataSource = empDataSet ;
                 EmployeesDataGrid.DataMember = "employees";
+
+              
 
                 btnAddEmployee.Show();
                 btnRemoveEmployee.Show();
@@ -114,5 +117,7 @@ namespace SelfCheckoutGroupProject
             empDataAdapt.Update(empDataSet, "employees");
             MessageBox.Show("The selected record has been deleted from the database!\nThe Employee table has been updated!");
 		}
+
+		
 	}
 }

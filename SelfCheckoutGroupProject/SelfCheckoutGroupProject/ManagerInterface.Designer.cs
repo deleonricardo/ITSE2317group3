@@ -139,6 +139,7 @@
 			this.EmployeesDataGrid.RowTemplate.Height = 28;
 			this.EmployeesDataGrid.Size = new System.Drawing.Size(513, 336);
 			this.EmployeesDataGrid.TabIndex = 2;
+			//this.EmployeesDataGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeesDataGrid_CellEndEdit);
 			// 
 			// btnAddEmployee
 			// 

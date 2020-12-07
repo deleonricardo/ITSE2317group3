@@ -31,6 +31,7 @@
 			this.btnManager = new System.Windows.Forms.Button();
 			this.btnReports = new System.Windows.Forms.Button();
 			this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+			this.btnEmpReport = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// btnManager
@@ -46,9 +47,9 @@
 			// 
 			this.btnReports.Location = new System.Drawing.Point(25, 99);
 			this.btnReports.Name = "btnReports";
-			this.btnReports.Size = new System.Drawing.Size(116, 34);
+			this.btnReports.Size = new System.Drawing.Size(199, 34);
 			this.btnReports.TabIndex = 1;
-			this.btnReports.Text = "&View Reports";
+			this.btnReports.Text = "&View Inventory";
 			this.btnReports.UseVisualStyleBackColor = true;
 			this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
 			// 
@@ -62,11 +63,21 @@
 			this.crystalReportViewer1.Size = new System.Drawing.Size(1115, 487);
 			this.crystalReportViewer1.TabIndex = 2;
 			// 
+			// btnEmpReport
+			// 
+			this.btnEmpReport.Location = new System.Drawing.Point(322, 99);
+			this.btnEmpReport.Name = "btnEmpReport";
+			this.btnEmpReport.Size = new System.Drawing.Size(199, 34);
+			this.btnEmpReport.TabIndex = 3;
+			this.btnEmpReport.Text = "&Employee Report";
+			this.btnEmpReport.UseVisualStyleBackColor = true;
+			// 
 			// Report
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1249, 675);
+			this.Controls.Add(this.btnEmpReport);
 			this.Controls.Add(this.crystalReportViewer1);
 			this.Controls.Add(this.btnReports);
 			this.Controls.Add(this.btnManager);
@@ -81,5 +92,6 @@
 		private System.Windows.Forms.Button btnManager;
 		private System.Windows.Forms.Button btnReports;
 		private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+		private System.Windows.Forms.Button btnEmpReport;
 	}
 }
