@@ -110,6 +110,9 @@ namespace SelfCheckoutGroupProject
 		private void btnRemoveEmployee_Click(object sender, EventArgs e)
 		{
             // Delete a selected row and the database will update - AC
+            empCommBuild = new MySqlCommandBuilder(empDataAdapt);
+            empDataAdapt.Update(empDataSet, "employees");
+            MessageBox.Show("The selected record has been deleted from the database!\nThe Employee table has been updated!");
 		}
 	}
 }

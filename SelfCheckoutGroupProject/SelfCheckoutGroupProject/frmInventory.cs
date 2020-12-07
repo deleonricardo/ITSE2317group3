@@ -103,7 +103,9 @@ namespace SelfCheckoutGroupProject
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
 			// The Delete Item button will delete a selected row  and update the database - AC
-			
+			cmdBuilder = new MySqlCommandBuilder(dataApdapter);
+			dataApdapter.Update(sqlDataSet, "inventory");
+			MessageBox.Show("Item Deleted.\n Inventory has been updated");
 		}
 
 		private void pbNewItem_Click(object sender, EventArgs e)

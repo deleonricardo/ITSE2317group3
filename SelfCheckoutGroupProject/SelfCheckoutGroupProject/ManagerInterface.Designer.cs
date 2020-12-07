@@ -158,7 +158,7 @@
 			this.btnRemoveEmployee.Name = "btnRemoveEmployee";
 			this.btnRemoveEmployee.Size = new System.Drawing.Size(195, 55);
 			this.btnRemoveEmployee.TabIndex = 4;
-			this.btnRemoveEmployee.Text = "&Delete Employee";
+			this.btnRemoveEmployee.Text = "Confirm &Delete";
 			this.btnRemoveEmployee.UseVisualStyleBackColor = false;
 			this.btnRemoveEmployee.Click += new System.EventHandler(this.btnRemoveEmployee_Click);
 			// 
