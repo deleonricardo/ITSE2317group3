@@ -60,7 +60,7 @@
 			this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
 			this.crystalReportViewer1.Location = new System.Drawing.Point(25, 157);
 			this.crystalReportViewer1.Name = "crystalReportViewer1";
-			this.crystalReportViewer1.Size = new System.Drawing.Size(1115, 487);
+			this.crystalReportViewer1.Size = new System.Drawing.Size(1680, 530);
 			this.crystalReportViewer1.TabIndex = 2;
 			// 
 			// btnEmpReport
@@ -71,12 +71,13 @@
 			this.btnEmpReport.TabIndex = 3;
 			this.btnEmpReport.Text = "&Employee Report";
 			this.btnEmpReport.UseVisualStyleBackColor = true;
+			this.btnEmpReport.Click += new System.EventHandler(this.btnEmpReport_Click);
 			// 
 			// Report
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1249, 675);
+			this.ClientSize = new System.Drawing.Size(1728, 699);
 			this.Controls.Add(this.btnEmpReport);
 			this.Controls.Add(this.crystalReportViewer1);
 			this.Controls.Add(this.btnReports);
