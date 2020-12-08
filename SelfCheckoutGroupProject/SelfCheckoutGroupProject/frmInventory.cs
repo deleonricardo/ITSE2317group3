@@ -103,6 +103,7 @@ namespace SelfCheckoutGroupProject
 
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
+			//After selecting a cell in the datagridview and pressing the delete key, 
 			// The Delete Item button will delete a selected row  and update the database - AC
 			cmdBuilder = new MySqlCommandBuilder(dataApdapter);
 			dataApdapter.Update(sqlDataSet, "inventory");

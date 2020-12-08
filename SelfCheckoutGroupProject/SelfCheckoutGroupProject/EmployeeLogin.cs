@@ -58,7 +58,7 @@ namespace SelfCheckoutGroupProject
                             txtEName.Text = "";
                             txtEPass.Text = "";
                             txtEID.Text = "";
-                }
+                    }
 
             }
                 catch (Exception c)
