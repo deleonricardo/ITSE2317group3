@@ -158,6 +158,7 @@ namespace SelfCheckoutGroupProject
 
 			txtImageName.Text = string.Empty;
 			txtProdNum.Text = string.Empty;
+			pbNewItem.Image = null;
 			imgConn.Close();
 
 

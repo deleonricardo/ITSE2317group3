@@ -59,6 +59,14 @@ namespace SelfCheckoutGroupProject
 
 
         }
-    }
+
+		private void btnManager_Click(object sender, EventArgs e)
+		{
+            //Take the user back to the manager interface - AC
+            ManagerInterface managerScreen = new ManagerInterface();
+            managerScreen.Show();
+            this.Hide();
+		}
+	}
     
 }

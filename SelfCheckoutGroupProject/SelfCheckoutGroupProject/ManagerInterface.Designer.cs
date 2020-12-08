@@ -68,7 +68,7 @@
 			this.rdoBtnSales.Size = new System.Drawing.Size(241, 49);
 			this.rdoBtnSales.TabIndex = 3;
 			this.rdoBtnSales.TabStop = true;
-			this.rdoBtnSales.Text = "Current Sales";
+			this.rdoBtnSales.Text = "View Reports";
 			this.rdoBtnSales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.rdoBtnSales.UseVisualStyleBackColor = false;
 			// 
@@ -139,7 +139,6 @@
 			this.EmployeesDataGrid.RowTemplate.Height = 28;
 			this.EmployeesDataGrid.Size = new System.Drawing.Size(513, 336);
 			this.EmployeesDataGrid.TabIndex = 2;
-			//this.EmployeesDataGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeesDataGrid_CellEndEdit);
 			// 
 			// btnAddEmployee
 			// 

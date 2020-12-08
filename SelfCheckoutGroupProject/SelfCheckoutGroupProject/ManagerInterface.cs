@@ -105,8 +105,8 @@ namespace SelfCheckoutGroupProject
 		private void btnCancel_Click(object sender, EventArgs e)
 		{
             //Take the user back to the main menu
-            frmMain mainScreen = new frmMain();
-            mainScreen.Show();
+            managerLogin loginScreen = new managerLogin();
+            loginScreen.Show();
             this.Hide();
 		}
 

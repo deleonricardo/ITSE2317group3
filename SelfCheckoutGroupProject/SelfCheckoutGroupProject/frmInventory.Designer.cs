@@ -67,9 +67,9 @@
 			// btnAddItem
 			// 
 			this.btnAddItem.BackColor = System.Drawing.Color.Lime;
-			this.btnAddItem.Location = new System.Drawing.Point(786, 451);
+			this.btnAddItem.Location = new System.Drawing.Point(742, 362);
 			this.btnAddItem.Name = "btnAddItem";
-			this.btnAddItem.Size = new System.Drawing.Size(144, 56);
+			this.btnAddItem.Size = new System.Drawing.Size(144, 46);
 			this.btnAddItem.TabIndex = 2;
 			this.btnAddItem.Text = "&Add Item";
 			this.btnAddItem.UseVisualStyleBackColor = false;
@@ -78,9 +78,9 @@
 			// btnDelete
 			// 
 			this.btnDelete.BackColor = System.Drawing.Color.LightCoral;
-			this.btnDelete.Location = new System.Drawing.Point(1136, 451);
+			this.btnDelete.Location = new System.Drawing.Point(1078, 362);
 			this.btnDelete.Name = "btnDelete";
-			this.btnDelete.Size = new System.Drawing.Size(144, 56);
+			this.btnDelete.Size = new System.Drawing.Size(144, 46);
 			this.btnDelete.TabIndex = 3;
 			this.btnDelete.Text = "Confirm &Delete";
 			this.btnDelete.UseVisualStyleBackColor = false;
@@ -100,9 +100,9 @@
 			// btnUploadImage
 			// 
 			this.btnUploadImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-			this.btnUploadImage.Location = new System.Drawing.Point(962, 451);
+			this.btnUploadImage.Location = new System.Drawing.Point(915, 362);
 			this.btnUploadImage.Name = "btnUploadImage";
-			this.btnUploadImage.Size = new System.Drawing.Size(144, 56);
+			this.btnUploadImage.Size = new System.Drawing.Size(144, 46);
 			this.btnUploadImage.TabIndex = 5;
 			this.btnUploadImage.Text = "&Upload Image";
 			this.btnUploadImage.UseVisualStyleBackColor = false;
@@ -110,9 +110,9 @@
 			// 
 			// btnCancel
 			// 
-			this.btnCancel.Location = new System.Drawing.Point(1307, 451);
+			this.btnCancel.Location = new System.Drawing.Point(1078, 461);
 			this.btnCancel.Name = "btnCancel";
-			this.btnCancel.Size = new System.Drawing.Size(144, 56);
+			this.btnCancel.Size = new System.Drawing.Size(144, 46);
 			this.btnCancel.TabIndex = 6;
 			this.btnCancel.Text = "&Cancel";
 			this.btnCancel.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@
 			// 
 			// frmInventory
 			// 
-			this.ClientSize = new System.Drawing.Size(1588, 663);
+			this.ClientSize = new System.Drawing.Size(1441, 542);
 			this.Controls.Add(this.txtProdNum);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.txtImageName);

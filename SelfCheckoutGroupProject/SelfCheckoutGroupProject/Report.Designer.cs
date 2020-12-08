@@ -42,6 +42,7 @@
 			this.btnManager.TabIndex = 0;
 			this.btnManager.Text = "&Back";
 			this.btnManager.UseVisualStyleBackColor = true;
+			this.btnManager.Click += new System.EventHandler(this.btnManager_Click);
 			// 
 			// btnReports
 			// 
