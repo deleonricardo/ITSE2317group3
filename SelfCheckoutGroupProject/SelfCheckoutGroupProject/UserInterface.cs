@@ -19,6 +19,7 @@ namespace SelfCheckoutGroupProject
     {
 
         double cost;
+        double dConvert;
         double dSubTotal, dTotal;
         int userQTYTest;
         MySqlDataReader testReader;
@@ -41,17 +42,20 @@ namespace SelfCheckoutGroupProject
             try
             {
                 iOrderCount = Convert.ToInt32(txtOrderNum.Text);
-                dItemTotal = iOrderCount * (Convert.ToDouble(lblPrice.Text));
-                lblItemTotal.Text = dItemTotal.ToString();
+                dItemTotal = iOrderCount * Convert.ToDouble(lblPrice.Text);
+                lblItemTotal.Text = dItemTotal.ToString("C2");
 
                 //cost - cart needed to store items
               //call calculate cost-RDL
-                 dSubTotal = CalculateCost(cost);
+                 dSubTotal += CalculateCost(dItemTotal);
 
                 //calculations for main total numbers RDL
-                lblSubTotal.Text += dSubTotal.ToString();
-                lblTaxes.Text = (dSubTotal * .00825).ToString();
-                lblTotal.Text = ((Convert.ToDouble(lblSubTotal.Text)) + (Convert.ToDouble(lblTaxes.Text))).ToString();
+
+                lblSubTotal.Text = dSubTotal.ToString("C2");
+                lblTaxes.Text = (dSubTotal * .00825).ToString("C2");
+                dConvert = dSubTotal + (dSubTotal * .00825);
+
+                lblTotal.Text = dConvert.ToString("C2");
             }
             catch (Exception c)
             {
@@ -68,15 +72,22 @@ namespace SelfCheckoutGroupProject
         //method to calculate cost and fill labels -RDL
         public double CalculateCost(double cost)
         {
-            double dTotal = 0;
+            double dTotal = 0; 
+            dTotal= dTotal+ cost;
 
 
 
             return dTotal;
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+		private void btnDelete_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnSearch_Click(object sender, EventArgs e)
         {
+
 
             try  //try catch and populate labels RDL
             {
@@ -85,6 +96,8 @@ namespace SelfCheckoutGroupProject
                 //Maybe use a FOR LOOP to test against user input and what is actually in the group3.inventory table?
                 //Also, which form will we be uploading the images to the database in? - AC
 
+                txtOrderNum.Text = string.Empty;
+                lblItemTotal.Text = string.Empty;
 
                 string productTest = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
                 MySqlConnection Conn = new MySqlConnection(productTest);
