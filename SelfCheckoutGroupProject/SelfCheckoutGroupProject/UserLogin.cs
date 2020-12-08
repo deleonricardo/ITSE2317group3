@@ -58,7 +58,7 @@ namespace SelfCheckoutGroupProject
 
 
                 //THIS CODE HERE IS POPULATING THE TABLE AND OPENING UP THE INTERFACE IT DOES NOT ALLOW FOR THE PASSWORD ID CHECK
-                if (userTable.Rows.Count == 1 || managerTable.Rows.Count==1)
+                if (userTable.Rows.Count != 1 || managerTable.Rows.Count!=1)
                 {
                     MessageBox.Show("Login Successful!");
                     UserInterface InterfaceScreen = new UserInterface();

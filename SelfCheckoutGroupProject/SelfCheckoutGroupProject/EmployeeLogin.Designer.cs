@@ -36,7 +36,7 @@
 			this.btnSignIn = new System.Windows.Forms.Button();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
-			this.txtEPass = new System.Windows.Forms.TextBox();
+			this.txtPass = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -121,22 +121,21 @@
 			this.label4.TabIndex = 5;
 			this.label4.Text = "Password:";
 			// 
-			// txtEPass
+			// txtPass
 			// 
-			this.txtEPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtEPass.Location = new System.Drawing.Point(246, 305);
-			this.txtEPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.txtEPass.Name = "txtEPass";
-			this.txtEPass.Size = new System.Drawing.Size(217, 39);
-			this.txtEPass.TabIndex = 6;
-			this.txtEPass.TextChanged += new System.EventHandler(this.btnSignIn_Click);
+			this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtPass.Location = new System.Drawing.Point(237, 298);
+			this.txtPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.txtPass.Name = "txtPass";
+			this.txtPass.Size = new System.Drawing.Size(217, 39);
+			this.txtPass.TabIndex = 9;
 			// 
 			// EmployeeLogin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(900, 562);
-			this.Controls.Add(this.txtEPass);
+			this.Controls.Add(this.txtPass);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.btnSignIn);
@@ -163,6 +162,6 @@
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtEPass;
-    }
+		private System.Windows.Forms.TextBox txtPass;
+	}
 }

@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
 namespace SelfCheckoutGroupProject
 {
     public partial class EmployeeLogin : Form
@@ -22,23 +25,36 @@ namespace SelfCheckoutGroupProject
             
                 try
                 {
-                
+
+                string userTest = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
+                MySqlConnection Conn = new MySqlConnection(userTest);
+
+                string selectStatement = "SELECT * FROM group3.employees WHERE EmployeeID = '" + txtEName.Text.Trim() + "'and Password = '" + txtPass.Text.Trim() + "'and EmployeeName= '"+txtEName.Text+"'";
+                MySqlCommand selectComm = new MySqlCommand(selectStatement, Conn);
+                MySqlDataAdapter userDA = new MySqlDataAdapter(selectStatement, Conn);
+                DataTable userTable = new DataTable();
+
+                userDA.Fill(userTable);
+
                 //check password RDL
-                if ((txtEName.Text != frmMain.nEmployee.sEName) && (frmMain.nEmployee.sEIDNum != txtEID.Text) && (txtEPass.Text != frmMain.nEmployee.sEPass))
+                //if ((txtEName.Text == frmMain.nEmployee.sEName) && ( txtEID.Text== frmMain.nEmployee.sEIDNum) && (txtPass.Text == frmMain.nEmployee.sEPass))
+                if(userTable.Rows.Count == 1)
                     {
-                        //error message and clear text boxes to try again
-                        MessageBox.Show("Error, Incorrect Entry");
-                        txtEName.Text = "";
-                        txtEPass.Text = "";
-                    txtEID.Text = "";
+                    //open user input screen - RDL
+                    frmInventory InterfaceScreen = new frmInventory();
+                    InterfaceScreen.Show();
+                    this.Hide();
                     }
                     else
                     {
 
-                        //open user input screen - RDL
-                        frmInventory InterfaceScreen = new frmInventory();
-                        InterfaceScreen.Show();
-                        this.Hide();
+                    //error message and clear text boxes to try again
+                    MessageBox.Show("Error, Incorrect Entry");
+                    txtEName.Text = "";
+                    txtPass.Text = "";
+                    txtEID.Text = "";
+
+                    
                     }
 
                 }
