@@ -87,6 +87,7 @@ namespace SelfCheckoutGroupProject
                 txtResetCode.Show();
                 //txtVerifyCode.Show();
                 btnVerifyCode.Show();
+                btnUpdatePass.Hide();
 
             }
             catch (Exception ex)

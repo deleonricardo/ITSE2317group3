@@ -33,6 +33,7 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtVerifyPass = new System.Windows.Forms.TextBox();
 			this.btnResetPass = new System.Windows.Forms.Button();
+			this.btnCancel = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -69,7 +70,7 @@
 			// 
 			// btnResetPass
 			// 
-			this.btnResetPass.Location = new System.Drawing.Point(178, 174);
+			this.btnResetPass.Location = new System.Drawing.Point(38, 174);
 			this.btnResetPass.Name = "btnResetPass";
 			this.btnResetPass.Size = new System.Drawing.Size(135, 39);
 			this.btnResetPass.TabIndex = 4;
@@ -77,11 +78,22 @@
 			this.btnResetPass.UseVisualStyleBackColor = true;
 			this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
 			// 
+			// btnCancel
+			// 
+			this.btnCancel.Location = new System.Drawing.Point(331, 174);
+			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Size = new System.Drawing.Size(135, 39);
+			this.btnCancel.TabIndex = 5;
+			this.btnCancel.Text = "&Cancel";
+			this.btnCancel.UseVisualStyleBackColor = true;
+			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+			// 
 			// ResetPassword
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(498, 272);
+			this.ClientSize = new System.Drawing.Size(559, 297);
+			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.btnResetPass);
 			this.Controls.Add(this.txtVerifyPass);
 			this.Controls.Add(this.label2);
@@ -101,5 +113,6 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox txtVerifyPass;
 		private System.Windows.Forms.Button btnResetPass;
+		private System.Windows.Forms.Button btnCancel;
 	}
 }

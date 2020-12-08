@@ -45,5 +45,13 @@ namespace SelfCheckoutGroupProject
 
 
 		}
+
+		private void btnCancel_Click(object sender, EventArgs e)
+		{
+			//Take the user back to the previous screen
+			UpdatePassword updateForm = new UpdatePassword();
+			updateForm.Show();
+			this.Hide();
+		}
 	}
 }
