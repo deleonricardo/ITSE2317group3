@@ -23,7 +23,28 @@ namespace SelfCheckoutGroupProject
 
         private void btnCreditCard_CheckedChanged(object sender, EventArgs e)
         {
+        }
 
+        private void btnCash_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBox2.Enabled = false;
+        }
+
+        private void btnCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBox2.Enabled = false;
+        }
+
+        private void btnConfirmPurchase_Click(object sender, EventArgs e)
+        {
+            string confirmPurchase = "Your purchase has been confirmed!";
+
+            MessageBox.Show(confirmPurchase);
+
+            this.Hide();
+
+            UserLogin frmLogin = new UserLogin();
+            frmLogin.Show();
         }
     }
 }
