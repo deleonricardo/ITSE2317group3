@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
 
 //Designed Form Interface and Cancel Button Functionality - AC
 
@@ -20,6 +22,8 @@ namespace SelfCheckoutGroupProject
 {
     public partial class UpdatePassword : Form
     {
+        string randCode;
+       public static string to;
         public UpdatePassword()
         {
             InitializeComponent();
@@ -40,9 +44,19 @@ namespace SelfCheckoutGroupProject
             lblVerifyCode.Hide();
             txtResetCode.Hide();
             txtVerifyCode.Hide();
-            btnResetPass.Hide();
+            
 
 
+		}
+
+		private void btnUpdatePass_Click(object sender, EventArgs e)
+		{
+            string from, pass, msgBody;
+            Random rand = new Random();
+            randCode = (rand.Next(999999)).ToString();
+
+            MailMessage resetEmail = new MailMessage();
+            to = txtEmail.Text;
 		}
 	}
 }
