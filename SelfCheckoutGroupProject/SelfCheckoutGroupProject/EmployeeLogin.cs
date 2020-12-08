@@ -36,7 +36,7 @@ namespace SelfCheckoutGroupProject
                     {
 
                         //open user input screen - RDL
-                        UserInterface InterfaceScreen = new UserInterface();
+                        frmInventory InterfaceScreen = new frmInventory();
                         InterfaceScreen.Show();
                         this.Hide();
                     }
