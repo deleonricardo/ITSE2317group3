@@ -124,7 +124,7 @@ namespace SelfCheckoutGroupProject
 		{
 			//Takes the user back to the Manager Interface screen - AC
 			ManagerInterface manager = new ManagerInterface();
-			manager.Show();
+			manager.Show(); 
 			this.Hide();
 		}
 

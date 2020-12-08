@@ -104,16 +104,19 @@ namespace SelfCheckoutGroupProject
 
 		private void btnCancel_Click(object sender, EventArgs e)
 		{
-            //Take the user back to the main menu
-            managerLogin loginScreen = new managerLogin();
-            loginScreen.Show();
+            rdoBtnEmployeeList.Checked = false;
+            rdoBtnPass.Checked = false;
+            rdoBtnSales.Checked = false;
+            rdoButtonInventory.Checked = false;
+            ////Take the user back to the main menu
+            //frmMain mainScreen = new frmMain();
+            //mainScreen.Show(); - creates multiple main screens -error on close RDL
             this.Hide();
 		}
 
 		private void btnRemoveEmployee_Click(object sender, EventArgs e)
 		{
-            //After selecting a cell in the datagridview and pressing the delete key, 
-            // The Delete  button will delete a selected row  and update the database - AC
+            // Delete a selected row and the database will update - AC
             empCommBuild = new MySqlCommandBuilder(empDataAdapt);
             empDataAdapt.Update(empDataSet, "employees");
             MessageBox.Show("The selected record has been deleted from the database!\nThe Employee table has been updated!");
