@@ -68,7 +68,7 @@ namespace SelfCheckoutGroupProject
             //open employee login screen - RDL
 			EmployeeLogin empLoginScreen = new EmployeeLogin();
 			empLoginScreen.Show();
-			this.Hide();
+			
 		}
 
         private void btnAdmin_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace SelfCheckoutGroupProject
             //open manager login screen - RDL
             managerLogin mngmtLoginScreen = new managerLogin();
             mngmtLoginScreen.Show();
-			this.Hide();
+			
         }
 
 		private void frmMain_Load(object sender, EventArgs e)
