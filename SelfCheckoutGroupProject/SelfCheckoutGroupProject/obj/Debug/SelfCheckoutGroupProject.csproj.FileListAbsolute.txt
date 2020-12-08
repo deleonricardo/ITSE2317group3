@@ -52,3 +52,4 @@ C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfChec
 C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\bin\Debug\stdole.dll
 C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.Report.resources
+C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.ResetPassword.resources
