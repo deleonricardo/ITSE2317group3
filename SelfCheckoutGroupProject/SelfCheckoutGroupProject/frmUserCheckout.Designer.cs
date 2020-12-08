@@ -200,6 +200,7 @@
             this.btnCheck.TabStop = true;
             this.btnCheck.Text = "Check";
             this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.CheckedChanged += new System.EventHandler(this.btnCheck_CheckedChanged);
             // 
             // btnCash
             // 
@@ -211,6 +212,7 @@
             this.btnCash.TabStop = true;
             this.btnCash.Text = "Cash";
             this.btnCash.UseVisualStyleBackColor = true;
+            this.btnCash.CheckedChanged += new System.EventHandler(this.btnCash_CheckedChanged);
             // 
             // btnCreditCard
             // 
@@ -308,6 +310,7 @@
             this.btnConfirmPurchase.TabIndex = 2;
             this.btnConfirmPurchase.Text = "Confirm Purchase";
             this.btnConfirmPurchase.UseVisualStyleBackColor = false;
+            this.btnConfirmPurchase.Click += new System.EventHandler(this.btnConfirmPurchase_Click);
             // 
             // frmUserCheckout
             // 
