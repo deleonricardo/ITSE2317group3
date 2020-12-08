@@ -42,7 +42,7 @@
 			this.txtResetCode = new System.Windows.Forms.TextBox();
 			this.lblVerifyCode = new System.Windows.Forms.Label();
 			this.txtVerifyCode = new System.Windows.Forms.TextBox();
-			this.btnResetPass = new System.Windows.Forms.Button();
+			this.btnVerifyCode = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// lblEmpName
@@ -95,16 +95,17 @@
 			// 
 			// btnUpdatePass
 			// 
-			this.btnUpdatePass.Location = new System.Drawing.Point(240, 428);
+			this.btnUpdatePass.Location = new System.Drawing.Point(156, 428);
 			this.btnUpdatePass.Name = "btnUpdatePass";
 			this.btnUpdatePass.Size = new System.Drawing.Size(165, 36);
 			this.btnUpdatePass.TabIndex = 8;
 			this.btnUpdatePass.Text = "&Update Password";
 			this.btnUpdatePass.UseVisualStyleBackColor = true;
+			this.btnUpdatePass.Click += new System.EventHandler(this.btnUpdatePass_Click);
 			// 
 			// btnCancel
 			// 
-			this.btnCancel.Location = new System.Drawing.Point(434, 432);
+			this.btnCancel.Location = new System.Drawing.Point(576, 435);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(123, 29);
 			this.btnCancel.TabIndex = 9;
@@ -160,21 +161,22 @@
 			this.txtVerifyCode.Size = new System.Drawing.Size(150, 26);
 			this.txtVerifyCode.TabIndex = 13;
 			// 
-			// btnResetPass
+			// btnVerifyCode
 			// 
-			this.btnResetPass.Location = new System.Drawing.Point(348, 375);
-			this.btnResetPass.Name = "btnResetPass";
-			this.btnResetPass.Size = new System.Drawing.Size(165, 36);
-			this.btnResetPass.TabIndex = 14;
-			this.btnResetPass.Text = "&Reset Password";
-			this.btnResetPass.UseVisualStyleBackColor = true;
+			this.btnVerifyCode.Location = new System.Drawing.Point(370, 431);
+			this.btnVerifyCode.Name = "btnVerifyCode";
+			this.btnVerifyCode.Size = new System.Drawing.Size(165, 36);
+			this.btnVerifyCode.TabIndex = 14;
+			this.btnVerifyCode.Text = "Verify Code";
+			this.btnVerifyCode.UseVisualStyleBackColor = true;
+			this.btnVerifyCode.Click += new System.EventHandler(this.btnVerifyCode_Click);
 			// 
 			// UpdatePassword
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(886, 522);
-			this.Controls.Add(this.btnResetPass);
+			this.Controls.Add(this.btnVerifyCode);
 			this.Controls.Add(this.txtVerifyCode);
 			this.Controls.Add(this.lblVerifyCode);
 			this.Controls.Add(this.txtResetCode);
@@ -213,6 +215,6 @@
 		private System.Windows.Forms.TextBox txtResetCode;
 		private System.Windows.Forms.Label lblVerifyCode;
 		private System.Windows.Forms.TextBox txtVerifyCode;
-		private System.Windows.Forms.Button btnResetPass;
+		private System.Windows.Forms.Button btnVerifyCode;
 	}
 }

@@ -66,7 +66,7 @@
 			this.label3.Location = new System.Drawing.Point(63, 238);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(184, 32);
-			this.label3.TabIndex = 2;
+			this.label3.TabIndex = 3;
 			this.label3.Text = "Employee ID:";
 			// 
 			// txtEName
@@ -76,7 +76,7 @@
 			this.txtEName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtEName.Name = "txtEName";
 			this.txtEName.Size = new System.Drawing.Size(327, 39);
-			this.txtEName.TabIndex = 3;
+			this.txtEName.TabIndex = 2;
 			// 
 			// txtEID
 			// 
@@ -94,7 +94,7 @@
 			this.btnSignIn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnSignIn.Name = "btnSignIn";
 			this.btnSignIn.Size = new System.Drawing.Size(163, 96);
-			this.btnSignIn.TabIndex = 5;
+			this.btnSignIn.TabIndex = 7;
 			this.btnSignIn.Text = "Sign In";
 			this.btnSignIn.UseVisualStyleBackColor = true;
 			this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
@@ -106,7 +106,7 @@
 			this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(163, 96);
-			this.btnCancel.TabIndex = 6;
+			this.btnCancel.TabIndex = 8;
 			this.btnCancel.Text = "Cancel";
 			this.btnCancel.UseVisualStyleBackColor = true;
 			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -118,7 +118,7 @@
 			this.label4.Location = new System.Drawing.Point(84, 305);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(147, 32);
-			this.label4.TabIndex = 7;
+			this.label4.TabIndex = 5;
 			this.label4.Text = "Password:";
 			// 
 			// txtEPass
@@ -128,7 +128,7 @@
 			this.txtEPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtEPass.Name = "txtEPass";
 			this.txtEPass.Size = new System.Drawing.Size(217, 39);
-			this.txtEPass.TabIndex = 8;
+			this.txtEPass.TabIndex = 6;
 			this.txtEPass.TextChanged += new System.EventHandler(this.btnSignIn_Click);
 			// 
 			// EmployeeLogin

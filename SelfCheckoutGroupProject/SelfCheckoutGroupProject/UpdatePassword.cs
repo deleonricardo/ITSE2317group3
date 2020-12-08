@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
 
 //Designed Form Interface and Cancel Button Functionality - AC
 
@@ -20,6 +22,9 @@ namespace SelfCheckoutGroupProject
 {
     public partial class UpdatePassword : Form
     {
+        string randCode;
+       public static string to;
+        SmtpClient smtp;
         public UpdatePassword()
         {
             InitializeComponent();
@@ -40,9 +45,76 @@ namespace SelfCheckoutGroupProject
             lblVerifyCode.Hide();
             txtResetCode.Hide();
             txtVerifyCode.Hide();
-            btnResetPass.Hide();
+            btnVerifyCode.Hide();
+            
 
 
+		}
+
+		private void btnUpdatePass_Click(object sender, EventArgs e)
+		{
+            string from, pass, msgBody;
+            Random rand = new Random();
+            randCode = (rand.Next(999999)).ToString();
+
+            MailMessage resetEmail = new MailMessage();
+            to = (txtEmail.Text).ToString();
+            from = "checkoutreset@gmail.com";
+            pass = "resettest123";
+            msgBody = "Your reset code is: " + randCode;
+
+            resetEmail.To.Add(to);
+            resetEmail.From = new MailAddress(from);
+            resetEmail.Body = msgBody;
+            resetEmail.Subject = "SelfCheckout password reset";
+
+            
+            smtp = new SmtpClient("smtp.gmail.com");
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
+            smtp.Port = 587;
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+           
+            smtp.Credentials = new NetworkCredential(from, pass);
+
+            try
+            {
+                smtp.Send(resetEmail);
+                MessageBox.Show("Code Sent Successfully!");
+
+                lblResetCode.Show();
+                //lblVerifyCode.Show();
+                txtResetCode.Show();
+                //txtVerifyCode.Show();
+                btnVerifyCode.Show();
+                btnUpdatePass.Hide();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            
+            }
+            
+		}
+
+		private void btnVerifyCode_Click(object sender, EventArgs e)
+		{
+            if (randCode == (txtResetCode.Text).ToString())
+            {
+
+                to = txtEmail.Text;
+                ResetPassword resetScreen = new ResetPassword();
+                this.Hide();
+                resetScreen.Show();
+
+            }
+
+            else
+            {
+                MessageBox.Show("Incorrect Code.\nPlease check your email address and try again");
+            
+            }
 		}
 	}
 }

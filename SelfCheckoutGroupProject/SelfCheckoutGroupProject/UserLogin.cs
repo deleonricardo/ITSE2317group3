@@ -38,7 +38,7 @@ namespace SelfCheckoutGroupProject
                 string userTest = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
                 MySqlConnection Conn  = new MySqlConnection(userTest);
 
-                string selectStatement = "SELECT * FROM group3.employees WHERE EmployeeID = '" + txtID.Text.Trim() + "'and Password = '" + txtPassword.Text.Trim()+"'";
+                string selectStatement = "SELECT * FROM group3.employees WHERE EmployeeID = '" + txtID.Text.Trim() + "'or Password = '" + txtPassword.Text.Trim()+"'";
                 MySqlCommand selectComm = new MySqlCommand(selectStatement, Conn);
                 MySqlDataAdapter userDA = new MySqlDataAdapter(selectStatement, Conn);
                 DataTable userTable = new DataTable();
@@ -46,17 +46,42 @@ namespace SelfCheckoutGroupProject
                userDA.Fill(userTable);
 
 
+                string manTest = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
+                MySqlConnection manConn = new MySqlConnection(manTest);
+
+                string manSelect = "SELECT * FROM group3.managertable WHERE ManagerID = '" + txtID.Text.Trim() + "'or Password = '" + txtPassword.Text.Trim() + "'";
+                MySqlCommand manComm = new MySqlCommand(manSelect, Conn);
+                MySqlDataAdapter manDA = new MySqlDataAdapter(manSelect, Conn);
+                DataTable managerTable = new DataTable();
+
+                manDA.Fill(managerTable);
+
+
                 //THIS CODE HERE IS POPULATING THE TABLE AND OPENING UP THE INTERFACE IT DOES NOT ALLOW FOR THE PASSWORD ID CHECK
-                if (userTable.Rows.Count != 1)
+                if (userTable.Rows.Count != 1 && managerTable.Rows.Count!=1)
                 {
                     MessageBox.Show("Login Successful!");
-                UserInterface InterfaceScreen = new UserInterface();
-                InterfaceScreen.Show();
-                this.Hide();
-                
+                    UserInterface InterfaceScreen = new UserInterface();
+                    InterfaceScreen.Show();
+                    this.Hide();
+
                 }
 
 
+                //THIS CODE HERE IS POPULATING THE TABLE AND OPENING UP THE INTERFACE IT DOES NOT ALLOW FOR THE PASSWORD ID CHECK
+                //if (userTable.Rows.Count != 1)
+                //{
+                //    MessageBox.Show("Login Successful!");
+                //UserInterface InterfaceScreen = new UserInterface();
+                //InterfaceScreen.Show();
+                //this.Hide();
+                
+                //}
+
+
+
+
+                
 
 
 
@@ -64,15 +89,18 @@ namespace SelfCheckoutGroupProject
 
 
 
-				//if ((txtID.Text != frmMain.nManager.sMIDNum && txtPassword.Text != frmMain.nManager.sMPass) || (txtID.Text != frmMain.nEmployee.sEIDNum && txtPassword.Text != frmMain.nEmployee.sEPass))
-				//{
-					//error message and clear text boxes to try again
-					//MessageBox.Show("Error, Incorrect Entry");
-					//txtID.Text = "";
-					//txtPassword.Text = "";
-				//}
-				else
-				{
+
+
+
+                //if ((txtID.Text != frmMain.nManager.sMIDNum && txtPassword.Text != frmMain.nManager.sMPass) || (txtID.Text != frmMain.nEmployee.sEIDNum && txtPassword.Text != frmMain.nEmployee.sEPass))
+                //{
+                //error message and clear text boxes to try again
+                //MessageBox.Show("Error, Incorrect Entry");
+                //txtID.Text = "";
+                //txtPassword.Text = "";
+                //}
+                else
+                {
 
                     //error message and clear text boxes to try again
                     MessageBox.Show("Error, Incorrect Entry");

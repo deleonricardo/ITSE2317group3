@@ -1,4 +1,10 @@
-﻿using System;
+﻿//Names: Ricardo DeLeon, Aiden Candanoza, Andres Cortez
+//Class: INEW-2330-2001
+//Description: This is the source code for our Self-Checkout group project. Comments are scattered throughout the program as a form of communication
+//between team members
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
