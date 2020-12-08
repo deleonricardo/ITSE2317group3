@@ -14,7 +14,8 @@ using System.Data.SqlClient;
 namespace SelfCheckoutGroupProject
 {
 	public partial class frmMain : Form
-	{
+    { 
+
         public static Manager nManager = new Manager();
         public static Employee nEmployee = new Employee();
         public static Product pProduct = new Product();

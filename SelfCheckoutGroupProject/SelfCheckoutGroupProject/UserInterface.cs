@@ -17,6 +17,7 @@ namespace SelfCheckoutGroupProject
 {
     public partial class UserInterface : Form
     {
+
         double cost;
         double dSubTotal, dTotal;
         int userQTYTest;
@@ -30,6 +31,8 @@ namespace SelfCheckoutGroupProject
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            Product newProduct = new Product();
+
             int iOrderCount;
             double dItemTotal;
 
@@ -55,7 +58,7 @@ namespace SelfCheckoutGroupProject
                 MessageBox.Show(c.Message);
             }
 
-
+            frmMain.cart.Add(newProduct);
 
 
           
