@@ -106,7 +106,7 @@ namespace SelfCheckoutGroupProject
                     //This will fill in the name price and QTY labels depending on the SKU entered.
                     //Test is successful. Image needs to change to reflect the correct Item
                     //Everything else updates to reflect the correct item
-                    MessageBox.Show("Success!");
+                    
 
                     //Change the image based on user input - AC
                     //Will also use this code on manager interface when they a select a row in the datagridview

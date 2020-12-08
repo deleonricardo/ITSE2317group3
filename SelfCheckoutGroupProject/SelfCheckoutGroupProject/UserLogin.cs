@@ -99,8 +99,8 @@ namespace SelfCheckoutGroupProject
         {
             txtID.Text = "";
             txtPassword.Text = "";
-            frmMain MainScreen = new frmMain();
-            MainScreen.Show();
+            //frmMain MainScreen = new frmMain();
+            //MainScreen.Show(); - opens multiple main form - error on close RDL
             this.Hide();
         }
     }

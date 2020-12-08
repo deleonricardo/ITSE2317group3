@@ -120,8 +120,8 @@ namespace SelfCheckoutGroupProject
             txtMName.Text = "";
             txtPassword.Text = "";
             //Added the code to take the user back frmMain - AC
-            frmMain mainScreen = new frmMain();
-            mainScreen.Show();
+           // frmMain mainScreen = new frmMain();
+          // mainScreen.Show(); - should not be needed, main should always be open underneath or error at close with multiple main open -RDL
             this.Hide();
             
         }

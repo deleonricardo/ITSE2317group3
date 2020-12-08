@@ -104,9 +104,13 @@ namespace SelfCheckoutGroupProject
 
 		private void btnCancel_Click(object sender, EventArgs e)
 		{
-            //Take the user back to the main menu
-            frmMain mainScreen = new frmMain();
-            mainScreen.Show();
+            rdoBtnEmployeeList.Checked = false;
+            rdoBtnPass.Checked = false;
+            rdoBtnSales.Checked = false;
+            rdoButtonInventory.Checked = false;
+            ////Take the user back to the main menu
+            //frmMain mainScreen = new frmMain();
+            //mainScreen.Show(); - creates multiple main screens -error on close RDL
             this.Hide();
 		}
 
