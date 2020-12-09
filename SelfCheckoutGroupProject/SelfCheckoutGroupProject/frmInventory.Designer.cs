@@ -31,7 +31,6 @@
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnAddItem = new System.Windows.Forms.Button();
-			this.btnDelete = new System.Windows.Forms.Button();
 			this.pbNewItem = new System.Windows.Forms.PictureBox();
 			this.btnUploadImage = new System.Windows.Forms.Button();
 			this.btnCancel = new System.Windows.Forms.Button();
@@ -67,24 +66,13 @@
 			// btnAddItem
 			// 
 			this.btnAddItem.BackColor = System.Drawing.Color.Lime;
-			this.btnAddItem.Location = new System.Drawing.Point(742, 362);
+			this.btnAddItem.Location = new System.Drawing.Point(808, 362);
 			this.btnAddItem.Name = "btnAddItem";
 			this.btnAddItem.Size = new System.Drawing.Size(144, 46);
 			this.btnAddItem.TabIndex = 2;
-			this.btnAddItem.Text = "&Add Item";
+			this.btnAddItem.Text = "Update &Data";
 			this.btnAddItem.UseVisualStyleBackColor = false;
 			this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
-			// 
-			// btnDelete
-			// 
-			this.btnDelete.BackColor = System.Drawing.Color.LightCoral;
-			this.btnDelete.Location = new System.Drawing.Point(1078, 362);
-			this.btnDelete.Name = "btnDelete";
-			this.btnDelete.Size = new System.Drawing.Size(144, 46);
-			this.btnDelete.TabIndex = 3;
-			this.btnDelete.Text = "Confirm &Delete";
-			this.btnDelete.UseVisualStyleBackColor = false;
-			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// pbNewItem
 			// 
@@ -100,7 +88,7 @@
 			// btnUploadImage
 			// 
 			this.btnUploadImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-			this.btnUploadImage.Location = new System.Drawing.Point(915, 362);
+			this.btnUploadImage.Location = new System.Drawing.Point(1001, 362);
 			this.btnUploadImage.Name = "btnUploadImage";
 			this.btnUploadImage.Size = new System.Drawing.Size(144, 46);
 			this.btnUploadImage.TabIndex = 5;
@@ -110,7 +98,7 @@
 			// 
 			// btnCancel
 			// 
-			this.btnCancel.Location = new System.Drawing.Point(1078, 461);
+			this.btnCancel.Location = new System.Drawing.Point(1170, 362);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(144, 46);
 			this.btnCancel.TabIndex = 6;
@@ -129,7 +117,7 @@
 			// 
 			// txtImageName
 			// 
-			this.txtImageName.Location = new System.Drawing.Point(1001, 233);
+			this.txtImageName.Location = new System.Drawing.Point(1021, 233);
 			this.txtImageName.Name = "txtImageName";
 			this.txtImageName.Size = new System.Drawing.Size(162, 26);
 			this.txtImageName.TabIndex = 8;
@@ -147,7 +135,7 @@
 			// 
 			this.txtProdNum.Location = new System.Drawing.Point(1021, 286);
 			this.txtProdNum.Name = "txtProdNum";
-			this.txtProdNum.Size = new System.Drawing.Size(142, 26);
+			this.txtProdNum.Size = new System.Drawing.Size(162, 26);
 			this.txtProdNum.TabIndex = 10;
 			// 
 			// frmInventory
@@ -160,7 +148,6 @@
 			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.btnUploadImage);
 			this.Controls.Add(this.pbNewItem);
-			this.Controls.Add(this.btnDelete);
 			this.Controls.Add(this.btnAddItem);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.dataGridView1);
@@ -190,7 +177,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button btnAddItem;
-		private System.Windows.Forms.Button btnDelete;
 		private System.Windows.Forms.PictureBox pbNewItem;
 		private System.Windows.Forms.Button btnUploadImage;
 		private System.Windows.Forms.Button btnCancel;

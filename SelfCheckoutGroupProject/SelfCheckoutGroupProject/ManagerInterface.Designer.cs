@@ -36,7 +36,6 @@
 			this.btnEnter = new System.Windows.Forms.Button();
 			this.EmployeesDataGrid = new System.Windows.Forms.DataGridView();
 			this.btnAddEmployee = new System.Windows.Forms.Button();
-			this.btnRemoveEmployee = new System.Windows.Forms.Button();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.EmployeesDataGrid)).BeginInit();
@@ -142,29 +141,18 @@
 			// 
 			// btnAddEmployee
 			// 
-			this.btnAddEmployee.BackColor = System.Drawing.SystemColors.MenuHighlight;
-			this.btnAddEmployee.Location = new System.Drawing.Point(264, 460);
+			this.btnAddEmployee.BackColor = System.Drawing.Color.DodgerBlue;
+			this.btnAddEmployee.Location = new System.Drawing.Point(301, 460);
 			this.btnAddEmployee.Name = "btnAddEmployee";
 			this.btnAddEmployee.Size = new System.Drawing.Size(195, 55);
 			this.btnAddEmployee.TabIndex = 3;
-			this.btnAddEmployee.Text = "&Add Employee";
+			this.btnAddEmployee.Text = "&Update Employees";
 			this.btnAddEmployee.UseVisualStyleBackColor = false;
 			this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
 			// 
-			// btnRemoveEmployee
-			// 
-			this.btnRemoveEmployee.BackColor = System.Drawing.Color.LightCoral;
-			this.btnRemoveEmployee.Location = new System.Drawing.Point(499, 460);
-			this.btnRemoveEmployee.Name = "btnRemoveEmployee";
-			this.btnRemoveEmployee.Size = new System.Drawing.Size(195, 55);
-			this.btnRemoveEmployee.TabIndex = 4;
-			this.btnRemoveEmployee.Text = "Confirm &Delete";
-			this.btnRemoveEmployee.UseVisualStyleBackColor = false;
-			this.btnRemoveEmployee.Click += new System.EventHandler(this.btnRemoveEmployee_Click);
-			// 
 			// btnCancel
 			// 
-			this.btnCancel.Location = new System.Drawing.Point(714, 460);
+			this.btnCancel.Location = new System.Drawing.Point(633, 460);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(195, 55);
 			this.btnCancel.TabIndex = 5;
@@ -178,7 +166,6 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(953, 581);
 			this.Controls.Add(this.btnCancel);
-			this.Controls.Add(this.btnRemoveEmployee);
 			this.Controls.Add(this.btnAddEmployee);
 			this.Controls.Add(this.EmployeesDataGrid);
 			this.Controls.Add(this.btnEnter);
@@ -203,7 +190,6 @@
         private System.Windows.Forms.Button btnEnter;
 		private System.Windows.Forms.DataGridView EmployeesDataGrid;
 		private System.Windows.Forms.Button btnAddEmployee;
-		private System.Windows.Forms.Button btnRemoveEmployee;
 		private System.Windows.Forms.Button btnCancel;
 	}
 }

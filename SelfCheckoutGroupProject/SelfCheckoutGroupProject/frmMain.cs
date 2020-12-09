@@ -16,6 +16,8 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
+//Include to open the Word Doc
+using System.Diagnostics;
 
 namespace SelfCheckoutGroupProject
 {
@@ -113,6 +115,13 @@ namespace SelfCheckoutGroupProject
 			
 
 
+		}
+
+		private void programGuideToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			//When the User selects the Program Guide under the Help Tab in the Menu Strip, pull up the Help Document.doc file. - AC
+			//Post Test Note: Needed to include @ symbol before the quotes with path name. Test Successful. Opens in MS Word, not within the program itself - AC
+			System.Diagnostics.Process.Start(@"C:\Users\zetro\Documents\GitHub\ITSE2317group3\HelpDocument.doc");
 		}
 
 

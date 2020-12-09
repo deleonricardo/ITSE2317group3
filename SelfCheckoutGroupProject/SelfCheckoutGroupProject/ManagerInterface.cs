@@ -59,7 +59,7 @@ namespace SelfCheckoutGroupProject
               
 
                 btnAddEmployee.Show();
-                btnRemoveEmployee.Show();
+                
 
             }
             if (rdoBtnSales.Checked == true)
@@ -90,7 +90,7 @@ namespace SelfCheckoutGroupProject
 		{
             //When the form loads, Hide the Add and Delete Employee Buttons. They will be visible once the Employees option is selected - AC
             btnAddEmployee.Hide();
-            btnRemoveEmployee.Hide();
+          
 		}
 
 		private void btnAddEmployee_Click(object sender, EventArgs e)
@@ -99,7 +99,7 @@ namespace SelfCheckoutGroupProject
             //Test is succsessful. New employees are added, and the columns that are not selected are defaulted to a value of 0 - AC
             empCommBuild = new MySqlCommandBuilder(empDataAdapt);
             empDataAdapt.Update(empDataSet, "employees");
-            MessageBox.Show("A new employee has been added! \n Employees table has been updated!");
+            MessageBox.Show("Employee Records have been changed!\n Employees table has been updated!");
 		}
 
 		private void btnCancel_Click(object sender, EventArgs e)
@@ -114,13 +114,7 @@ namespace SelfCheckoutGroupProject
             this.Hide();
 		}
 
-		private void btnRemoveEmployee_Click(object sender, EventArgs e)
-		{
-            // Delete a selected row and the database will update - AC
-            empCommBuild = new MySqlCommandBuilder(empDataAdapt);
-            empDataAdapt.Update(empDataSet, "employees");
-            MessageBox.Show("The selected record has been deleted from the database!\nThe Employee table has been updated!");
-		}
+		
 
 		
 	}
