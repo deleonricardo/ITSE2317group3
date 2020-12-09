@@ -53,65 +53,147 @@ namespace SelfCheckoutGroupProject
 
 		private void btnUpdatePass_Click(object sender, EventArgs e)
 		{
-            //Connect to the databse and check both the employee and manager tables for valid input 
-            string sqlDBConn = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
-            MySqlConnection con = new MySqlConnection(sqlDBConn);
+            try
+            {
 
-            string statement = "SELECT EmployeeName, EmployeeID, Email FROM group3.employees WHERE EmployeeName='" + txtName.Text.Trim() + "'AND EmployeeID= '" + txtEmpID.Text.Trim() + "' AND Email='" + txtEmail.Text.Trim() + ";" +
-                "SELECT Password FROM group3.managertable WHERE Password=''" + txtPassword.Text.Trim() + "'";
 
-            MySqlCommand passComm = new MySqlCommand(statement, con);
-            MySqlDataAdapter updateAdapt = new MySqlDataAdapter(statement, con);
-            DataTable updateDT = new DataTable();
-            updateAdapt.Fill(updateDT);
+                //string empTest = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
+                //MySqlConnection Conn = new MySqlConnection(empTest);
+
+                //string selectStatement = "SELECT EmployeeName, EmployeeID,Email  FROM group3.employees WHERE EmployeeName = '" + txtName.Text.Trim() + "'and EmployeeID = '" + txtEmpID.Text.Trim() + "'and Email = '" + txtEmail.Text.Trim() + ";" +
+                //    "SELECT Password FROM group3.managertable WHERE ManagerPass= '"+txtPassword.Text.Trim()+"'";
+                //MySqlCommand selectComm = new MySqlCommand(selectStatement, Conn);
+                //MySqlDataAdapter empDA = new MySqlDataAdapter(selectStatement, Conn);
+                //DataTable empTable = new DataTable();
+
+                //empDA.Fill(empTable);
+
+                ////If the manager successfully logs in, they will be greeted by name
+                ////before being taken to the manager Interface Screen
+                //if (empTable.Rows.Count == 1)
+                //{
+
+                    string from, pass, msgBody;
+                    Random rand = new Random();
+                    randCode = (rand.Next(999999)).ToString();
+
+                    MailMessage resetEmail = new MailMessage();
+                    to = (txtEmail.Text).ToString();
+                    from = "checkoutreset@gmail.com";
+                    pass = "resettest123";
+                    msgBody = "Your reset code is: " + randCode;
+
+                    resetEmail.To.Add(to);
+                    resetEmail.From = new MailAddress(from);
+                    resetEmail.Body = msgBody;
+                    resetEmail.Subject = "SelfCheckout password reset";
+
+
+                    smtp = new SmtpClient("smtp.gmail.com");
+                    smtp.EnableSsl = true;
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Port = 587;
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                    smtp.Credentials = new NetworkCredential(from, pass);
+
+                    try
+                    {
+                        smtp.Send(resetEmail);
+                        MessageBox.Show("Code Sent Successfully!");
+
+                        //Hide the previous textBoxes
+                        txtName.Hide();
+                        txtEmpID.Hide();
+                         txtEmail.Hide();
+                        txtPassword.Hide();
+                        lblEmail.Hide();
+                    lblEmpID.Hide();
+                    lblEmpName.Hide();
+                    lblManPW.Hide();
+
+                        lblResetCode.Show();
+                        txtResetCode.Show();
+
+                        btnVerifyCode.Show();
+                        btnUpdatePass.Hide();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+
+                    }
+               // }
+
+                //else
+                //{
+                //    //error message and clear text boxes to try again
+                //    MessageBox.Show("Error");
+
+                //}
+
+            }
+
+
+            catch (Exception c)
+            {
+                MessageBox.Show(c.Message);
+            }
+
 
             //If the records match, send the user the code and take them to the reset password form - AC
 
             //if (updateDT.Rows.Count == 1)
             //{
 
-                string from, pass, msgBody;
-                Random rand = new Random();
-                randCode = (rand.Next(999999)).ToString();
+            //string from, pass, msgBody;
+            //    Random rand = new Random();
+            //    randCode = (rand.Next(999999)).ToString();
 
-                MailMessage resetEmail = new MailMessage();
-                to = (txtEmail.Text).ToString();
-                from = "checkoutreset@gmail.com";
-                pass = "resettest123";
-                msgBody = "Your reset code is: " + randCode;
+            //    MailMessage resetEmail = new MailMessage();
+            //    to = (txtEmail.Text).ToString();
+            //    from = "checkoutreset@gmail.com";
+            //    pass = "resettest123";
+            //    msgBody = "Your reset code is: " + randCode;
 
-                resetEmail.To.Add(to);
-                resetEmail.From = new MailAddress(from);
-                resetEmail.Body = msgBody;
-                resetEmail.Subject = "SelfCheckout password reset";
+            //    resetEmail.To.Add(to);
+            //    resetEmail.From = new MailAddress(from);
+            //    resetEmail.Body = msgBody;
+            //    resetEmail.Subject = "SelfCheckout password reset";
 
 
-                smtp = new SmtpClient("smtp.gmail.com");
-                smtp.EnableSsl = true;
-                smtp.UseDefaultCredentials = false;
-                smtp.Port = 587;
-                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            //    smtp = new SmtpClient("smtp.gmail.com");
+            //    smtp.EnableSsl = true;
+            //    smtp.UseDefaultCredentials = false;
+            //    smtp.Port = 587;
+            //    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
 
-                smtp.Credentials = new NetworkCredential(from, pass);
+            //    smtp.Credentials = new NetworkCredential(from, pass);
 
-                try
-                {
-                    smtp.Send(resetEmail);
-                    MessageBox.Show("Code Sent Successfully!");
+            //    try
+            //    {
+            //        smtp.Send(resetEmail);
+            //        MessageBox.Show("Code Sent Successfully!");
 
-                    lblResetCode.Show();
-                    //lblVerifyCode.Show();
-                    txtResetCode.Show();
-                    //txtVerifyCode.Show();
-                    btnVerifyCode.Show();
-                    btnUpdatePass.Hide();
+            //    //Hide the previous textBoxes
+            //    txtName.Hide();
+            //    txtEmpID.Hide();
+            //    txtPassword.Hide();
+                    
+            //        lblResetCode.Show();
+            //        //lblVerifyCode.Show();
+            //        txtResetCode.Show();
+            //        //txtVerifyCode.Show();
+            //        btnVerifyCode.Show();
+            //        btnUpdatePass.Hide();
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message);
 
-                }
+            //    }
 
             //}
 
@@ -147,6 +229,7 @@ namespace SelfCheckoutGroupProject
             else
             {
                 MessageBox.Show("Incorrect Code.\nPlease check your email address and try again");
+                txtResetCode.Text = string.Empty;
             
             }
 		}
