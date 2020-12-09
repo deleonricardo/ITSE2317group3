@@ -17,6 +17,10 @@ namespace SelfCheckoutGroupProject
 {
     public partial class UserInterface : Form
     {
+        public static string pubSubTotal;
+        public static string pubTax;
+        public static string pubTotal;
+
 
         double cost;
         double dConvert;
@@ -56,6 +60,10 @@ namespace SelfCheckoutGroupProject
                 dConvert = dSubTotal + (dSubTotal * .00825);
 
                 lblTotal.Text = dConvert.ToString("C2");
+
+                pubSubTotal = dSubTotal.ToString("C2");
+               pubTax = (dSubTotal * .00825).ToString("C2");
+                pubTotal = dConvert.ToString("C2");
             }
             catch (Exception c)
             {
@@ -83,6 +91,20 @@ namespace SelfCheckoutGroupProject
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
 
+		}
+
+		private void btnCheckout_Click(object sender, EventArgs e)
+		{
+            frmUserCheckout chkOutScreen = new frmUserCheckout();
+            chkOutScreen.Show();
+            this.Hide();
+		}
+
+		private void UserInterface_Load(object sender, EventArgs e)
+		{
+            pubSubTotal = string.Empty;
+            pubTax = string.Empty;
+            pubTotal = string.Empty;
 		}
 
 		private void btnSearch_Click(object sender, EventArgs e)
@@ -156,7 +178,7 @@ namespace SelfCheckoutGroupProject
                     //Update the QTY field in the database to subtract whatever quanity is entered by the user
                     // string qtyUpdate = "UPDATE group3.inventory SET QTY = "+int.Parse(testReader["QTY"].ToString())+" - " + int.Parse(txtOrderNum.Text) + "WHERE ItemIDNumber = '" + txtSKU.Text.Trim() + "'";
                     testReader.Read();
-                    lblName.Text = testReader["ItemName"].ToString();
+                    lblName.Text= testReader["ItemName"].ToString();
                     lblPrice.Text = testReader["Price"].ToString();
                     lblCount.Text = testReader["QTY"].ToString();
 
