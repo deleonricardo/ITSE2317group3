@@ -325,6 +325,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmUserCheckout";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmUserCheckout_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

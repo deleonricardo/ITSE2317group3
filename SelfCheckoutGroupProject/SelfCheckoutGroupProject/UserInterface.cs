@@ -32,6 +32,7 @@ namespace SelfCheckoutGroupProject
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
             Product newProduct = new Product();
 
             int iOrderCount;
@@ -85,7 +86,13 @@ namespace SelfCheckoutGroupProject
 
 		}
 
-		private void btnSearch_Click(object sender, EventArgs e)
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+            frmUserCheckout frmCheck = new frmUserCheckout();
+            frmCheck.Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
         {
 
 

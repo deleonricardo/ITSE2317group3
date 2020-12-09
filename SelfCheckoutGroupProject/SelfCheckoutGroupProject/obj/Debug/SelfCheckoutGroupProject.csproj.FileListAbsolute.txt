@@ -101,3 +101,4 @@ C:\Users\Aiden\OneDrive\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject
 C:\Users\Aiden\OneDrive\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.exe
 C:\Users\Aiden\OneDrive\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.pdb
 C:\Users\zetro\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.ResetPassword.resources
+C:\Users\Aiden\OneDrive\Documents\GitHub\ITSE2317group3\SelfCheckoutGroupProject\SelfCheckoutGroupProject\obj\Debug\SelfCheckoutGroupProject.ResetPassword.resources

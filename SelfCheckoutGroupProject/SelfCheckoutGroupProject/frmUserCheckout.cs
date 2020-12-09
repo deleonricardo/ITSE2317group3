@@ -16,6 +16,8 @@ namespace SelfCheckoutGroupProject
 {
     public partial class frmUserCheckout : Form
     {
+        public const double tax = .08245;
+
         public frmUserCheckout()
         {
             InitializeComponent();
@@ -45,6 +47,41 @@ namespace SelfCheckoutGroupProject
 
             UserLogin frmLogin = new UserLogin();
             frmLogin.Show();
+        }
+
+        private void frmUserCheckout_Load(object sender, EventArgs e)
+        {
+            //Read only Text Box
+            txtTax.Enabled = false;
+            txtSubtotal.Enabled = false;
+            txtBalance.Enabled = false;
+
+            int numProduct = 0;
+            foreach (Product product in frmMain.cart)
+            {
+                ++numProduct;
+                lstOrderSummary.Items.Add((object)("Item #" + numProduct.ToString()));
+                lstOrderSummary.Items.Add((object)("Product Name: " + product.sName.ToString()));
+                lstOrderSummary.Items.Add((object)("Product Price: " + product.dPrice));
+                lstOrderSummary.Items.Add((object)("Product Number: " + product.sSKUNum.ToString()));
+                lstOrderSummary.Items.Add((object)" ");
+
+
+
+                //Display total, fee, and taxs into list box
+                //double dNum1 = 0.0, DNum2 = dNum1 * tax;
+
+                //foreach (pizza pizza in frmMain.cart)
+                //    dNum1 += pizza.Cost;
+
+                //lblDeliveryCharge.Text = delivery.ToString("C2");
+                //lblPizzaTotal.Text = dNum1.ToString("C2");
+                //lblTax.Text = DNum2.ToString("C2");
+                //lblOrderTotal.Text = (dNum1 + DNum2 + delivery).ToString("C2");
+            }
+
+
+
         }
     }
 }
