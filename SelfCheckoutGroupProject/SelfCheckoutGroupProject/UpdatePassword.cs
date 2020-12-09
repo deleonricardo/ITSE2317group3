@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
 
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
 //Designed Form Interface and Cancel Button Functionality - AC
 
 //In this form, the manager will be able to update / reset an employee's password
@@ -46,55 +49,86 @@ namespace SelfCheckoutGroupProject
             txtResetCode.Hide();
             txtVerifyCode.Hide();
             btnVerifyCode.Hide();
-            
-
-
-		}
+        }
 
 		private void btnUpdatePass_Click(object sender, EventArgs e)
 		{
-            string from, pass, msgBody;
-            Random rand = new Random();
-            randCode = (rand.Next(999999)).ToString();
+            //Connect to the databse and check both the employee and manager tables for valid input 
+            string sqlDBConn = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
+            MySqlConnection con = new MySqlConnection(sqlDBConn);
 
-            MailMessage resetEmail = new MailMessage();
-            to = (txtEmail.Text).ToString();
-            from = "checkoutreset@gmail.com";
-            pass = "resettest123";
-            msgBody = "Your reset code is: " + randCode;
+            string statement = "SELECT EmployeeName, EmployeeID, Email FROM group3.employees WHERE EmployeeName='" + txtName.Text.Trim() + "'AND EmployeeID= '" + txtEmpID.Text.Trim() + "' AND Email='" + txtEmail.Text.Trim() + ";" +
+                "SELECT Password FROM group3.managertable WHERE Password=''" + txtPassword.Text.Trim() + "'";
 
-            resetEmail.To.Add(to);
-            resetEmail.From = new MailAddress(from);
-            resetEmail.Body = msgBody;
-            resetEmail.Subject = "SelfCheckout password reset";
+            MySqlCommand passComm = new MySqlCommand(statement, con);
+            MySqlDataAdapter updateAdapt = new MySqlDataAdapter(statement, con);
+            DataTable updateDT = new DataTable();
+            updateAdapt.Fill(updateDT);
 
-            
-            smtp = new SmtpClient("smtp.gmail.com");
-            smtp.EnableSsl = true;
-            smtp.UseDefaultCredentials = false;
-            smtp.Port = 587;
-            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-           
-            smtp.Credentials = new NetworkCredential(from, pass);
+            //If the records match, send the user the code and take them to the reset password form - AC
 
-            try
-            {
-                smtp.Send(resetEmail);
-                MessageBox.Show("Code Sent Successfully!");
+            //if (updateDT.Rows.Count == 1)
+            //{
 
-                lblResetCode.Show();
-                //lblVerifyCode.Show();
-                txtResetCode.Show();
-                //txtVerifyCode.Show();
-                btnVerifyCode.Show();
-                btnUpdatePass.Hide();
+                string from, pass, msgBody;
+                Random rand = new Random();
+                randCode = (rand.Next(999999)).ToString();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            
-            }
+                MailMessage resetEmail = new MailMessage();
+                to = (txtEmail.Text).ToString();
+                from = "checkoutreset@gmail.com";
+                pass = "resettest123";
+                msgBody = "Your reset code is: " + randCode;
+
+                resetEmail.To.Add(to);
+                resetEmail.From = new MailAddress(from);
+                resetEmail.Body = msgBody;
+                resetEmail.Subject = "SelfCheckout password reset";
+
+
+                smtp = new SmtpClient("smtp.gmail.com");
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Port = 587;
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                smtp.Credentials = new NetworkCredential(from, pass);
+
+                try
+                {
+                    smtp.Send(resetEmail);
+                    MessageBox.Show("Code Sent Successfully!");
+
+                    lblResetCode.Show();
+                    //lblVerifyCode.Show();
+                    txtResetCode.Show();
+                    //txtVerifyCode.Show();
+                    btnVerifyCode.Show();
+                    btnUpdatePass.Hide();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+
+            //}
+
+            //else
+            //{
+                //Clear out the visible textboxes and display an error message - AC
+                //string errorMsg = "1 or more fields does not match any record in the database.\nPlease enter valid information";
+                //MessageBox.Show(errorMsg);
+                //txtName.Text = string.Empty;
+                //txtEmpID.Text = string.Empty;
+                //txtEmail.Text = string.Empty;
+                //txtPassword.Text = string.Empty;
+
+
+            //}
+
+               
             
 		}
 
