@@ -22,48 +22,73 @@ namespace SelfCheckoutGroupProject
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            
-                try
-                {
+            try
+            {
 
-                string userTest = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
-                MySqlConnection Conn = new MySqlConnection(userTest);
 
-                string selectStatement = "SELECT * FROM group3.employees WHERE EmployeeID= '" + txtEName.Text.Trim() + "'and EmployeeName= '" + txtEName.Text.Trim() + "'and Password= '"+txtPass.Text.Trim()+"'";
+                string empTest = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
+                MySqlConnection Conn = new MySqlConnection(empTest);
+
+                string selectStatement = "SELECT EmployeeID,EmployeeName,Password  FROM group3.employees WHERE EmployeeID = '" + txtEID.Text.Trim() + "'and EmployeeName = '" + txtEName.Text.Trim() + "'and Password = '" + txtPass.Text.Trim() + "'";
                 MySqlCommand selectComm = new MySqlCommand(selectStatement, Conn);
-                MySqlDataAdapter userDA = new MySqlDataAdapter(selectStatement, Conn);
-                DataTable userTable = new DataTable();
+                MySqlDataAdapter empDA = new MySqlDataAdapter(selectStatement, Conn);
+                DataTable empTable = new DataTable();
 
-                userDA.Fill(userTable);
+                empDA.Fill(empTable);
 
-                //check password RDL
-                //if ((txtEName.Text == frmMain.nEmployee.sEName) && ( txtEID.Text== frmMain.nEmployee.sEIDNum) && (txtPass.Text == frmMain.nEmployee.sEPass))
-                if(userTable.Rows.Count == 1)
-                    {
-                    //open user input screen - RDL
+                //If the manager successfully logs in, they will be greeted by name
+                //before being taken to the manager Interface Screen
+                if (empTable.Rows.Count == 1)
+                {
+                    MessageBox.Show("Login Successful! \n Welcome " + txtEName.Text);
                     frmInventory InterfaceScreen = new frmInventory();
                     InterfaceScreen.Show();
                     this.Hide();
-                    }
-                    else
-                    {
 
+                    //if (txtMID.Text != frmMain.nManager.sMIDNum && txtPassword.Text != frmMain.nManager.sMPass && txtMName.Text != frmMain.nManager.sMName)
+                    //{
+                    //    //error message and clear text boxes to try again
+                    //    MessageBox.Show("Error, Incorrect Entry");
+                    //    txtMID.Text = "";
+                    //    txtPassword.Text = "";
+                    //}
+                    //else
+                    //{
+
+                    //    //open user input screen - RDL
+                    //    UserInterface UI = new UserInterface();
+                    //    UI.Show();
+                    //    this.Hide();
+                    //}
+
+                }
+
+                else
+                {
                     //error message and clear text boxes to try again
-                    MessageBox.Show("Error, Incorrect Entry");
+                    MessageBox.Show(" ACCESS DENIED. \n Error, Incorrect Entry");
+                    txtEID.Text = "";
                     txtEName.Text = "";
                     txtPass.Text = "";
-                    txtEID.Text = "";
-
-                    
-                    }
 
                 }
-                catch (Exception c)
-                {
-                    MessageBox.Show(c.Message);
-                }
-            
+
+            }
+
+
+            catch (Exception c)
+            {
+                MessageBox.Show(c.Message);
+            }
+
+
+
+
         }
+
+
+
+
 
 		private void btnCancel_Click(object sender, EventArgs e)
 		{

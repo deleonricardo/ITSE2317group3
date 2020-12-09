@@ -40,7 +40,9 @@ namespace SelfCheckoutGroupProject
 
 			else
 			{
-				MessageBox.Show("The two passwords entered do not match!\nPlease check your email again and enter the correct code");
+				MessageBox.Show("ERROR: RESET UNSUCCESSFUL!\nThe two passwords entered do not match!");
+				txtNewPass.Text = string.Empty;
+				txtVerifyPass.Text = string.Empty;
 			}
 
 

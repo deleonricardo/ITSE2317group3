@@ -49,7 +49,7 @@ namespace SelfCheckoutGroupProject
                 string manTest = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
                 MySqlConnection manConn = new MySqlConnection(manTest);
 
-                string manSelect = "SELECT * FROM group3.managertable WHERE ManagerID = '" + txtID.Text.Trim() + "'or Password = '" + txtPassword.Text.Trim() + "'";
+                string manSelect = "SELECT * FROM group3.managertable WHERE ManagerID = '" + txtID.Text.Trim() + "'or ManagerPass = '" + txtPassword.Text.Trim() + "'";
                 MySqlCommand manComm = new MySqlCommand(manSelect, Conn);
                 MySqlDataAdapter manDA = new MySqlDataAdapter(manSelect, Conn);
                 DataTable managerTable = new DataTable();
@@ -58,7 +58,7 @@ namespace SelfCheckoutGroupProject
 
 
                 //THIS CODE HERE IS POPULATING THE TABLE AND OPENING UP THE INTERFACE IT DOES NOT ALLOW FOR THE PASSWORD ID CHECK
-                if (userTable.Rows.Count != 1 || managerTable.Rows.Count!=1)
+                if (userTable.Rows.Count != 1 && managerTable.Rows.Count!=1)
                 {
                     MessageBox.Show("Login Successful!");
                     UserInterface InterfaceScreen = new UserInterface();
