@@ -50,13 +50,14 @@
 			this.label10 = new System.Windows.Forms.Label();
 			this.lblItemTotal = new System.Windows.Forms.Label();
 			this.pbProduct = new System.Windows.Forms.PictureBox();
+			this.btnCheckout = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pbProduct)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnAdd
 			// 
 			this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAdd.Location = new System.Drawing.Point(341, 450);
+			this.btnAdd.Location = new System.Drawing.Point(259, 450);
 			this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Size = new System.Drawing.Size(153, 74);
@@ -68,7 +69,7 @@
 			// btnDelete
 			// 
 			this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnDelete.Location = new System.Drawing.Point(547, 450);
+			this.btnDelete.Location = new System.Drawing.Point(480, 450);
 			this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(153, 74);
@@ -193,7 +194,7 @@
 			// btnSearch
 			// 
 			this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSearch.Location = new System.Drawing.Point(119, 450);
+			this.btnSearch.Location = new System.Drawing.Point(58, 450);
 			this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnSearch.Name = "btnSearch";
 			this.btnSearch.Size = new System.Drawing.Size(153, 74);
@@ -268,11 +269,22 @@
 			this.pbProduct.TabIndex = 21;
 			this.pbProduct.TabStop = false;
 			// 
+			// btnCheckout
+			// 
+			this.btnCheckout.Location = new System.Drawing.Point(674, 453);
+			this.btnCheckout.Name = "btnCheckout";
+			this.btnCheckout.Size = new System.Drawing.Size(153, 74);
+			this.btnCheckout.TabIndex = 22;
+			this.btnCheckout.Text = "&Checkout";
+			this.btnCheckout.UseVisualStyleBackColor = true;
+			this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
+			// 
 			// UserInterface
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(900, 562);
+			this.Controls.Add(this.btnCheckout);
 			this.Controls.Add(this.pbProduct);
 			this.Controls.Add(this.lblItemTotal);
 			this.Controls.Add(this.label10);
@@ -298,6 +310,7 @@
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.Name = "UserInterface";
 			this.Text = "UserInterface";
+			this.Load += new System.EventHandler(this.UserInterface_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pbProduct)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -311,9 +324,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblSubTotal;
-        private System.Windows.Forms.Label lblTaxes;
-        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -328,5 +338,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblItemTotal;
 		private System.Windows.Forms.PictureBox pbProduct;
+		public System.Windows.Forms.Label lblSubTotal;
+		public System.Windows.Forms.Label lblTaxes;
+		public System.Windows.Forms.Label lblTotal;
+		private System.Windows.Forms.Button btnCheckout;
 	}
 }
