@@ -29,7 +29,7 @@ namespace SelfCheckoutGroupProject
                 string userTest = "server=cstnt.tstc.edu;user=group3;database=group3;port=3306;password=password3";
                 MySqlConnection Conn = new MySqlConnection(userTest);
 
-                string selectStatement = "SELECT * FROM group3.employees WHERE EmployeeID = '" + txtEName.Text.Trim() + "'and Password = '" + txtPass.Text.Trim() + "'and EmployeeName= '"+txtEName.Text+"'";
+                string selectStatement = "SELECT * FROM group3.employees WHERE EmployeeID= '" + txtEName.Text.Trim() + "'and EmployeeName= '" + txtEName.Text.Trim() + "'and Password= '"+txtPass.Text.Trim()+"'";
                 MySqlCommand selectComm = new MySqlCommand(selectStatement, Conn);
                 MySqlDataAdapter userDA = new MySqlDataAdapter(selectStatement, Conn);
                 DataTable userTable = new DataTable();

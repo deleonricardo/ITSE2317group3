@@ -98,17 +98,10 @@ namespace SelfCheckoutGroupProject
 			//Test is successful, Inventory table updates and adds in the data entered by the user as a new record - AC
 			cmdBuilder = new MySqlCommandBuilder(dataApdapter);
 			dataApdapter.Update(sqlDataSet, "inventory");
-			MessageBox.Show("Item Added. \n Inventory has been updated");
+			MessageBox.Show("Data has been modified. \n Inventory has been updated");
 		}
 
-		private void btnDelete_Click(object sender, EventArgs e)
-		{
-			//After selecting a cell in the datagridview and pressing the delete key, 
-			// The Delete Item button will delete a selected row  and update the database - AC
-			cmdBuilder = new MySqlCommandBuilder(dataApdapter);
-			dataApdapter.Update(sqlDataSet, "inventory");
-			MessageBox.Show("Item Deleted.\n Inventory has been updated");
-		}
+		
 
 		private void pbNewItem_Click(object sender, EventArgs e)
 		{
