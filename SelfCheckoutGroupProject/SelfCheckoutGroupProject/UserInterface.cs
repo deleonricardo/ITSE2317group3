@@ -20,6 +20,8 @@ namespace SelfCheckoutGroupProject
         public static string pubSubTotal;
         public static string pubTax;
         public static string pubTotal;
+        public static string qtyUpdate;
+        
 
 
         double cost;
@@ -45,6 +47,7 @@ namespace SelfCheckoutGroupProject
             //should it be a running tally -RDL
             try
             {
+                userQTYTest = Convert.ToInt32(lblCount.Text);
                 iOrderCount = Convert.ToInt32(txtOrderNum.Text);
                 dItemTotal = iOrderCount * Convert.ToDouble(lblPrice.Text);
                 lblItemTotal.Text = dItemTotal.ToString("C2");
@@ -64,6 +67,17 @@ namespace SelfCheckoutGroupProject
                 pubSubTotal = dSubTotal.ToString("C2");
                pubTax = (dSubTotal * .00825).ToString("C2");
                 pubTotal = dConvert.ToString("C2");
+                int currentStock = userQTYTest - iOrderCount;
+                lblCount.Text = currentStock.ToString();
+                if (currentStock <= 0)
+                {
+                    currentStock = 0;
+                    lblCount.Text = currentStock.ToString();
+                    MessageBox.Show("Quantity entered exceeds current amount in stock...");
+                    
+                }
+                qtyUpdate = lblCount.Text;
+                
             }
             catch (Exception c)
             {
@@ -81,7 +95,7 @@ namespace SelfCheckoutGroupProject
         public double CalculateCost(double cost)
         {
             double dTotal = 0; 
-            dTotal= dTotal+ cost;
+            dTotal= dTotal + cost;
 
 
 
@@ -90,10 +104,50 @@ namespace SelfCheckoutGroupProject
 
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
+            Product newProduct = new Product();
 
-		}
+            int iOrderCount;
+            double dItemTotal;
 
-		private void btnCheckout_Click(object sender, EventArgs e)
+            //need to create an array for storing items to send to CalculateCost - RDL
+            //should it be a running tally -RDL
+            try
+            {
+                iOrderCount = Convert.ToInt32(txtOrderNum.Text);
+                dItemTotal = iOrderCount * Convert.ToDouble(lblPrice.Text);
+                lblItemTotal.Text = dItemTotal.ToString("C2");
+
+                //cost - cart needed to store items
+                //call calculate cost-RDL
+                dSubTotal -= CalculateCost(dItemTotal);
+
+                //calculations for main total numbers RDL
+
+                lblSubTotal.Text = dSubTotal.ToString("C2");
+                lblTaxes.Text = (dSubTotal * .00825).ToString("C2");
+                dConvert = dSubTotal + (dSubTotal * .00825);
+
+                lblTotal.Text = dConvert.ToString("C2");
+
+                pubSubTotal = dSubTotal.ToString("C2");
+                pubTax = (dSubTotal * .00825).ToString("C2");
+                pubTotal = dConvert.ToString("C2");
+                lblCount.Text = (userQTYTest + iOrderCount).ToString();
+                qtyUpdate = lblCount.Text;
+            }
+            catch (Exception c)
+            {
+                MessageBox.Show(c.Message);
+            }
+
+            frmMain.cart.Remove(newProduct);
+
+
+
+
+        }
+
+        private void btnCheckout_Click(object sender, EventArgs e)
 		{
             frmUserCheckout chkOutScreen = new frmUserCheckout();
             chkOutScreen.Show();

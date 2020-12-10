@@ -42,12 +42,12 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(21, 86);
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(264, 72);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(228, 32);
+			this.label1.Size = new System.Drawing.Size(234, 32);
 			this.label1.TabIndex = 0;
-			this.label1.Text = "Employee Login:";
+			this.label1.Text = "Employee Login";
 			// 
 			// label2
 			// 
@@ -128,7 +128,7 @@
 			this.txtPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtPass.Name = "txtPass";
 			this.txtPass.Size = new System.Drawing.Size(217, 39);
-			this.txtPass.TabIndex = 9;
+			this.txtPass.TabIndex = 6;
 			// 
 			// EmployeeLogin
 			// 
